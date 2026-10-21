@@ -1,0 +1,14 @@
+{
+  "name": "hollow-universe-development-journal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "preview": "node scripts/preview.mjs",
+    "waitlist:export": "node scripts/export-waitlist.mjs",
+    "test:waitlist": "node tests/waitlist.mjs",
+    "deploy": "npm run build && node scripts/check.mjs --publish && wrangler deploy"
+  }
+}

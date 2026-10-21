@@ -1,0 +1,212 @@
+[
+ {
+  "src": "/assets/devblog/vehicles-monster-togg.jpg",
+  "alt": "The Monster TOGG on large tyres standing in a meadow near the vehicle workbench’s bay",
+  "caption": "The Monster TOGG: a TOGG on 1.7 m tyres and a lift kit · hosted capture, 21 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/vehicles-bay-screen.jpg",
+  "alt": "Vehicle bay screen listing the TOGG’s sockets, mass 1,920 kg, power 450 kW and lifted 0.75 m",
+  "caption": "The vehicle screen beside the inventory: sockets as slots, mass, power, top speed and lift · hosted capture, 21 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/vehicles-monster-tyres-screen.jpg",
+  "alt": "Interface viewer showing the monster tyres item with its description and the vehicle bay with condition bars",
+  "caption": "Module condition bars and an item description · interface viewer on sample data.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/vehicles-inspect.jpg",
+  "alt": "Read-only vehicle screen opened away from the bay with a hint to drive into a vehicle workbench’s bay to change it",
+  "caption": "INSPECT VEHICLE away from the bay: read-only, with a hint · hosted capture, 21 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/earth-land-map.jpg",
+  "alt": "Equal-area map of Earth with two large landmasses, lakes and rivers on either side of an ocean",
+  "caption": "Earth’s map from the 16 October land-proportion work · development capture; the terrain has been re-baked since.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/t2-coastal-scarp.jpg",
+  "alt": "Layered rock formations on red ground above a meadow, from the rejected cliff generation",
+  "caption": "A coastal scarp from the rejected 19 October cliff generation · development capture, so the frame rate shown is not representative of play.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/vehicles-workbench-tech-tree.jpg",
+  "alt": "Vehicle workbench tech tree with the Tin Finch, a minicopter, the TOGG car with tyres, engine and suspension parts, and a motorbike",
+  "caption": "The Vehicle Workbench’s tech tree: Tin Finch, KA-FA 1500, the TOGG and its parts, and the Zamazingo · hosted capture, 21 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/vehicles-togg-at-bay.jpg",
+  "alt": "A teal TOGG truck with a flat bed standing beside a vehicle workbench’s marked bay in a meadow",
+  "caption": "The TOGG at the bench’s marked bay · hosted capture, 21 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/vehicles-togg-chassis.jpg",
+  "alt": "Close view of the TOGG’s chassis, flat deck and suspension beside a hazard-striped corner post",
+  "caption": "The chassis, deck and suspension beside a bay corner post · hosted capture, 21 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/doors-triangle-airlock-open-above.jpg",
+  "alt": "Top-down view into a triangular stone room with a wooden door leaf swung open inside it",
+  "caption": "A triangular airlock from above, its open leaf swung inside · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/doors-double-door-shut.jpg",
+  "alt": "A shut wooden double door in a stone frame, seen from outside",
+  "caption": "A wooden double door shut, seen from outside · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/doors-room-airlock-open-inside.jpg",
+  "alt": "View through an open double door and a single door inside a small stone room",
+  "caption": "Inside the room airlock with its doors open · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/doors-room-airlock-open-above.jpg",
+  "alt": "Top-down view of a square stone room with two open door leaves",
+  "caption": "The same room from above, both leaves open · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/item-research-bench.png",
+  "alt": "Research bench inventory icon at six sizes, the previous flat vector above and the new rendered model below",
+  "caption": "Research bench: previous icon (top) and new rendered model (bottom) at the inventory’s slot sizes · 19 October.",
+  "kind": "render"
+ },
+ {
+  "src": "/assets/devblog/item-blueprint.png",
+  "alt": "Blueprint icon at six sizes, the previous document glyph above and a folded technical sheet below",
+  "caption": "Blueprint: a folded technical sheet replaces the document glyph · 19 October.",
+  "kind": "render"
+ },
+ {
+  "src": "/assets/devblog/item-explosives.png",
+  "alt": "Explosives icon at six sizes, the previous yellow blob above and a banded block of compound below",
+  "caption": "Explosives: a banded block of compound · 19 October.",
+  "kind": "render"
+ },
+ {
+  "src": "/assets/devblog/item-sign-plate.png",
+  "alt": "Sign plate icon at six sizes, the previous yellow warning sign above and two weathered road signs below",
+  "caption": "Sign plate: salvaged road signs · 18 October.",
+  "kind": "render"
+ },
+ {
+  "src": "/assets/devblog/item-sewing-kit.png",
+  "alt": "Sewing kit icon at six sizes, the previous brown box above and a spool of brown thread with a needle below",
+  "caption": "Sewing kit, second version after the owner’s rejection of the first · 18 October.",
+  "kind": "render"
+ },
+ {
+  "src": "/assets/devblog/item-salvage.png",
+  "alt": "Salvage icon at six sizes, the previous grey scrap tag above and a rusted gear, spring, pipe and nuts below",
+  "caption": "Salvage scrap: gear, spring, pipe and nuts · 19 October.",
+  "kind": "render"
+ },
+ {
+  "src": "/assets/devblog/item-woven-shirt.png",
+  "alt": "Woven shirt icon at six sizes, the previous brown shirt above and the pale worn garment below",
+  "caption": "Woven shirt: the garment as it is worn · 20 October.",
+  "kind": "render"
+ },
+ {
+  "src": "/assets/devblog/item-chest-plate.jpg",
+  "alt": "Riveted steel chest plate with shoulder guards and leather straps in the model viewer",
+  "caption": "Chest plate: the worn garment itself, first level of detail · model viewer, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/meadow-dawn.jpg",
+  "alt": "Tall meadow grass with seed heads and scattered rocks under a low morning sun",
+  "caption": "The meadow in low morning sun · hosted development capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/meadow-midday.jpg",
+  "alt": "Dense meadow of several grass species with seed heads and small flowers at midday",
+  "caption": "The open meadow at hour 10 · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/meadow-wood-edge.jpg",
+  "alt": "Birch and broadleaf trees at a wood’s edge above a grassy hillside",
+  "caption": "The edge of the wood, looking up the hillside · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/meadow-dusk.jpg",
+  "alt": "Meadow grass lit orange by a low sun at dusk",
+  "caption": "Backlit seed heads at dusk · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/meadow-hillside-low-sun.jpg",
+  "alt": "Grassy hillside with scattered rocks and shrubs against a pale evening sky",
+  "caption": "A hillside in low sun · hosted capture, 20 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/electricity-wind-turret-sam.jpg",
+  "alt": "A windmill wired by cable to an auto turret and on to a SAM launcher on a flat test plane",
+  "caption": "Wind to turret to SAM · native review scene using the production models, cables and ports.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/electricity-ports.jpg",
+  "alt": "Close view of cable ports on the turret and SAM base, amber outputs and cyan inputs",
+  "caption": "Port detail: amber is an output or passthrough, cyan an input · review scene.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/crosshair-settings.jpg",
+  "alt": "Settings screen on the CROSSHAIR tab with style, colour, size and a live preview",
+  "caption": "The CROSSHAIR tab with its live preview · settings screen, 18 October.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/crosshair-ring-dot.jpg",
+  "alt": "In-game HUD with a ring and dot crosshair at the exact centre of the screen",
+  "caption": "Ring + Dot at the exact centre · interface viewer on a sample backdrop.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/drop-all-inventory.jpg",
+  "alt": "Inventory screen with the DROP ALL button beside the INVENTORY heading",
+  "caption": "DROP ALL beside INVENTORY · interface viewer on sample data.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/admin-camera-third-person.jpg",
+  "alt": "Third-person admin camera showing the player character in a meadow with the camera controls listed above the hotbar",
+  "caption": "Admin third-person camera · development capture, 16 October (the ground has been reworked since).",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/f1-tools-building.jpg",
+  "alt": "F1 console TOOLS tab with FREE BUILD on and BGRADE tier buttons",
+  "caption": "F1 TOOLS tab: FREE BUILD and BGRADE · interface viewer on sample data.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/free-crafting.jpg",
+  "alt": "Crafting screen showing a recipe marked FREE CRAFTING with zero ingredients required",
+  "caption": "A recipe marked FREE CRAFTING · interface viewer on sample data.",
+  "kind": "capture"
+ },
+ {
+  "src": "/assets/devblog/menu-disconnect.jpg",
+  "alt": "Esc menu with Resume, Disconnect, Settings and Quit",
+  "caption": "The connected Esc menu with DISCONNECT · interface viewer.",
+  "kind": "capture"
+ }
+]

@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-01",
+  "prompts": [
+    {
+      "name": "planetary-mining",
+      "prompt": "Use case: stylized-concept. Wide cinematic 16:9 website game concept for Bare, Rust-style survival expanded across planets. Show a SMALL PLAYER-BUILT AUTOMINING OUTPOST on a rocky alien moon: 2 robust utilitarian automatic vertical mineral drills with thick auger shafts actively working into a visible ore deposit, cables connected to a small power unit, nearby filled metal ore bins and cargo crates, enclosed by practical high wooden barricades. A compact Rust-like 2x2 rough STONE block base with one rusted corrugated sheet-metal upper room, rectangular metal door and simple flat roof is part of this fenced player compound. This is a small vulnerable player setup, NOT a giant industrial factory, NOT a sci-fi city, NOT cute Astroneer aesthetic. A clothed survivor loads ore crates near the gate, a huge distant blue planet rises in sky, dusty rust-colored terrain, soft golden sunrise and deep blue shadows. Composition machinery and stone base mostly LEFT half and center; RIGHT third atmospheric dark rocky slope with room for text overlay. Grounded photoreal premium survival game concept art, believable fabricated machinery and worn materials, no text labels logos UI watermark."
+    },
+    {
+      "name": "mobile-home",
+      "refs": [
+        "D:/GameDev/Assets/IronWake_IW09/Previews/04_Cargo_Hold.png",
+        "D:/GameDev/Assets/IronWake_IW09/Previews/05_Workshop.png"
+      ],
+      "prompt": "Use case: stylized-concept. Wide cinematic 16:9 concept image for Bare showing a LARGE SHIP USED AS A MOBILE MAIN BASE. Two reference images are the user's actual IronWake cargo hold and workshop; preserve this utilitarian gray riveted weathered steel interior design language, rust accents, squat rectangular structure, steel girders, wall conduits, industrial crates. Create a photoreal cinematic derivative of that cargo/workshop deck outfitted by survival players: an organized workbench with tools, spare equipment and ore crates, wall shelves and lockable rugged storage, a modest bunk/sleeping bag area visible through a side doorway. Two clothed crew members work at bench and move a crate. Far aft OPEN RAMP clearly reveals ship landed on a barren planetary surface, distant ridges beneath stars and another moon. Interior shelter warm tungsten practical lights contrast cold blue exterior. Home is portable practical and vulnerable, not luxury space station or invulnerable fortress. All machinery/crew/workshop detail concentrated RIGHT two thirds; left foreground darker steel bulkhead and shadowed crates allow web copy. Wide enough to understand workshop, cargo, and sleeping functions, realistic human scale and depth, premium grounded realistic survival concept art, no text, UI, branding, watermark."
+    }
+  ],
+  "outputs": [
+    "public/assets/planetary-mining.webp",
+    "public/assets/mobile-home.webp"
+  ]
+}

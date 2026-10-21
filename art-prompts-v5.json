@@ -1,0 +1,61 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-01",
+  "prompts": [
+    {
+      "name": "orbital-flight",
+      "refs": [
+        "D:/GameDev/Assets/TinFinch_TF01/Previews/01_Hero_small.jpg",
+        "D:/GameDev/Assets/IronWake_IW09/Previews/01_Hero.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: cinematic 16:9 website hero artwork for Bare, photoreal AAA science-fiction survival art. Input image 1 is the exact Tin Finch ship design reference, image 2 is the exact IronWake ship design reference. Preserve their recognizable silhouettes, weathered blue/gray sheet-metal hulls, orange rust, utilitarian exposed cylindrical engines and glazed angular cockpits. Create a beautiful orbital flight scene: the large IronWake cruising above a huge blue planet's curved luminous atmosphere, a small Tin Finch accompanying it at a distance. Main ship occupies right half, three-quarter view, left half mostly deep dark space and atmospheric glow for website typography. Hard amber sunlight outlines worn metal, restrained cyan engine glow, thin cloud bands and sunrise across the planetary rim. Realistic scale, cinematic film grain, precise restrained lighting, breathtaking negative space, premium art direction. No text, no UI, no logos, no watermark. Wide landscape."
+    },
+    {
+      "name": "orbital-strike",
+      "refs": [
+        "D:/GameDev/Assets/IronWake_IW09/Previews/01_Hero.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: cinematic wide 16:9 website background artwork for Bare. Reference image is the user's original IronWake ship: preserve its slab-sided industrial gunmetal hull, rust-orange underside, long glazed command bridge, multiple cylindrical rear engines and mounted twin-barrel cannons. Depict this same ship at the upper right in a high-altitude orbital attack, looking down along the curved edge of a planet at a sprawling fortified industrial base on a barren coastal plateau far below. A few bright amber kinetic cannon trails arc toward defense batteries with distant small impact plumes. Vast scale, atmospheric haze, blue-black space overhead, sunset reflected along armor, dramatic cinematic realistic game concept art. Ship clearly identifiable, no generic sleek spaceship substitution. Left half has darker open atmosphere usable behind headline. Beautiful detailed environment, subtle bloom, filmic shadows, no graphic violence, no people visible. No text, no UI, no watermark."
+    },
+    {
+      "name": "frontier-landing",
+      "refs": [
+        "D:/GameDev/Assets/TinFinch_TF01/Previews/01_Hero_small.jpg"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: wide 16:9 cinematic environmental website artwork for Bare. Reference is the original Tin Finch: retain exact compact boxy blue rust-worn cabin with angled wraparound windshield, exposed two side cylindrical engines, pipes and landing skids. Show this little ship landed outside a player-built frontier base in an alien highland valley at blue hour. Base uses believable wood, corrugated iron, concrete lower walls, warm workshop interior, storage crates and a small antenna; two distant clothed explorers unload cargo beside ship. Huge distant moon behind ridgeline, amber lamps against cool mist, wet rock and grass foreground, exquisite atmospheric depth and realistic tactile weathered materials. Medium-wide scene, ship in right-center prominent and identifiable, base at left, no generic spacecraft. Premium grounded sci-fi survival concept art with cinematic film lighting, no text, no UI, no watermark."
+    },
+    {
+      "name": "orbital-strike-v2",
+      "refs": [
+        "C:/Users/uruskan/.codex/generated_images/01a0f666-2ee8-77b2-aafa-bbd1aa797845/exec-fd0ca6cc-d605-4ec9-85c9-d431b45a5870.png",
+        "D:/GameDev/Assets/IronWake_IW09/Previews/01_Hero.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit first reference artwork. Second reference is the authoritative IronWake ship design. Preserve ship silhouette, palette, beautiful wide cinematic scene, planet curvature, realistic lighting and orbit scale. Correct TWO elements. 1: replace entire large coastal industrial installation with a recognizable Rust-style PLAYER-BUILT BASE: an irregular, compact stone and sheet-metal clan compound on rocky grassland near the coast, assembled from stacked square and triangular building blocks, rough gray stone walls, corrugated rusty sheet-metal upper rooms, simple flat roofs, rectangular metal doors, modest roof cover, perimeter high wooden walls. No factory, no power plant, no giant sci-fi fortification, no towers with industrial smokestacks, no grand settlement. This is a practical survival-player base. 2: Ship fires ONLY the BIG FORWARD ORBITAL CANNONS, its largest paired thick long barrels on forward bow/main battery, visibly aimed downward along the exact trajectories toward that player base. Show two strong bright amber muzzle flashes directly at the ends of those largest main barrels, and powerful straight outgoing projectile trails aligned with the bores toward a distant base impact. Small flank side self-defense turrets are entirely idle: NO side muzzle flashes, NO side projectile trails. Make big main cannon firing unmistakable. Plausible perspective, no bent projectiles emerging from wrong locations, no star-wars lasers out of hull seams. No text, UI, watermark. Wide 16:9."
+    },
+    {
+      "name": "frontier-landing-v2",
+      "refs": [
+        "C:/Users/uruskan/.codex/generated_images/01a0f666-2ee8-77b2-aafa-bbd1aa797845/exec-bd52efc3-a14c-4dda-aa87-31e611f36f80.png",
+        "D:/GameDev/Assets/TinFinch_TF01/Previews/01_Hero_small.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit first reference artwork while preserving the exact Tin Finch ship from second reference, its rusty blue boxy cabin, side engines, landing skids, camera framing, misty mountain valley and big moon, two distant clothed survivors, beautiful cool/warm realistic filmic lighting. Replace the wooden scenic workshop buildings at left COMPLETELY with a recognizably Rust-style compact player-built survival base. A simple practical 2x2 footprint stone block base: chunky rough gray stone walls with visible masonry, square and triangular foundations, one corrugated rusty sheet-metal upper-floor room, flat roof and utilitarian low roof cover. Rectangular sheet-metal door and simple small shuttered window, warm light spilling through an open door onto outdoor workbench and stacked storage crates. No log cabin, no alpine cottage, no pitched timber roofs, no decorative wood beams, no industrial installation, no grand architecture. The Rust-like self-built base and salvaged Tin Finch should belong in the same survival world. Preserve ship and rest of image; only change base architecture to functional improvised Rust-style player construction. No text, UI, watermark. Wide 16:9."
+    },
+    {
+      "name": "orbital-strike-v3",
+      "refs": [
+        "D:/GameDev/Assets/IronWake_IW09/Previews/01_Hero.png"
+      ],
+      "prompt": "Use case: stylized-concept. Create a NEW wide cinematic 16:9 composition of this exact IronWake spacecraft bombarding a Rust-style player base. Change camera angle from reference: place ship in UPPER RIGHT, with its FRONT BOW pointing DIAGONALLY DOWN and LEFT toward the base in LOWER LEFT. We see its opposite side compared with reference. Preserve exact blocky gray/rust-orange hull, panoramic bridge windows, chunky cylindrical REAR engines (now at upper RIGHT), large main twin-barrel forward bow cannon (now at lower LEFT of ship), and smaller side turrets. The ONLY gun firing is its largest forward bow twin cannon: its TWO LONG THICK BARRELS point down-left, and exactly TWO bright straight amber projectile streaks begin at the two front muzzle tips and continue in that SAME down-left direction into the distant base. All side turrets and top turrets are idle. No beams from hull underside, no side flashes, no trails from any other point. Cannon bore and outgoing trajectory MUST align. It is fine to pitch whole ship toward target to achieve alignment. The base below is a small compact irregular Rust-style player-built clan compound of rough stone square/triangle rooms, flat rusty sheet-metal roofs and high wooden perimeter walls, on rocky coast. No factory or sprawling industrial installation. Planet curvature, dark upper atmosphere and amber sunset, vast believable scale, grounded hard sci-fi survival, tactile weathered material. Beautiful negative space at left upper sky for web text. No text UI logos watermark. Accurate physical geometry more important than copying previous composition."
+    },
+    {
+      "name": "foothold",
+      "prompt": "Use case: stylized-concept. Cinematic realistic wide 16:9 game concept artwork for Bare, a sci-fi multiplayer survival universe with Rust-like player-built bases. A tiny starter 2x1 base of rough gray stone square building blocks, a small triangle airlock and simple rusted sheet-metal door, basic flat sheet-metal roof, on a rocky ledge overlooking a pine forest and immense distant mountains at blue hour. A warm campfire outside with two distant clothed survivors resting beside a few salvaged boxes. NO log cabin, NO pitched roof, NO decorative timber house, NO factory installation. This is clearly an improvised utilitarian player base like Rust, not a storybook house. Atmospheric cool blue mist, warm fire bouncing on wet stones and metal door, layered cinematic depth, very distant moon barely visible through clouds. Building and campfire occupy left half and middle of picture, right half falls into dark forest shadows suitable for website overlay. Premium realistic environmental art, no text, no UI, no watermark."
+    }
+  ],
+  "selected": {
+    "orbital-flight": "orbital-flight.webp",
+    "orbital-strike-v3": "orbital-strike.webp",
+    "frontier-landing-v2": "frontier-landing.webp",
+    "foothold": "foothold.webp"
+  }
+}

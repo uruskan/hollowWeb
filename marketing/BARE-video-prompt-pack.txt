@@ -1,0 +1,172 @@
+BARE — “BRING IT HOME”
+60-second gameplay marketing trailer
+Production prompt pack for Google Flow / Veo
+Prepared from Bare's approved game direction and original ship designs.
+
+HOW TO USE THIS PACK
+Generate each numbered shot as a separate 8-second clip in 16:9. Assemble the strongest moments into the 60-second edit below. Paste the SHARED DIRECTION followed by exactly ONE SHOT into each generation. Do not paste the entire eleven-shot sequence into a single short-clip generation.
+For final clips, use Veo 3.1 Quality with Frames to Video and a carefully composed first frame. Flow's current support table lists first/last-frame support for Quality, but Ingredients/References to Video for Fast and Lite, not Quality. Use the original design references to prepare consistent first frames before animation.
+Select duration, aspect ratio and output resolution in Flow's settings.
+Generate location sound only. Add the continuous music track, optional voiceover and final typography in the edit.
+
+SHARED DIRECTION — PASTE THIS BEFORE EACH SHOT
+
+Create one 8-second shot for BARE, a finished, high-quality multiplayer survival game across planets. Visualize its completed gameplay and world. The image should have the visual character of polished Unreal Engine game rendering: grounded materials, physically coherent lighting, readable silhouettes and responsive player movement. Use the camera specified in the shot. First-person shots feel controlled by a real player; external views feel like restrained in-engine spectator cameras. Natural-speed action, moderate motion blur, mostly deep focus, restrained bloom, tactile surfaces.
+
+Bare's world is a lived-in survival frontier: rough stone walls, corrugated-metal doors, wooden construction frames, layered defenses, furnaces, storage boxes, workbenches, cables, practical power equipment and player-made repairs. Planetary bases look assembled and expanded by players. Characters wear original patched canvas clothing, scuffed work boots, useful pouches and mismatched industrial protective plates. Keep their faces, proportions and equipment consistent with the supplied frame.
+
+Use the supplied Bare designs faithfully. The Tin Finch is a compact utility spacecraft approximately five metres long, with a boxy glazed cockpit, worn pale-blue sheet metal, rust-orange wear, exposed cylindrical machinery and landing skids. The IronWake is a much larger, approximately 56-metre industrial ship with a glazed bridge, exterior cylindrical engines, living quarters, cargo space and a prominent twin-barrel rooftop cannon. Preserve their silhouettes, proportions, turret locations and material details throughout the shot.
+
+The survival rules matter: equipment and cargo are physical, valuable and stealable. Automatic miners put ore into local storage; players must collect and carry it. A large ship can serve as a mobile main home, but a fortified planetary main base provides greater protection. Bases and ships remain vulnerable to raids.
+
+Maintain contact, weight and continuity: hands grip objects, feet meet the ground, crates retain their size, doors rotate around hinges, ships remain rigid and weapons recoil along their barrels. Compose the main action clearly. The player should immediately understand what is happening and why it matters.
+
+Sound: specific, synchronized environmental and mechanical effects described below. No generated music, narration, dialogue or singing. Clean footage without HUD, subtitles, promotional text or logos; typography will be added during editing. No costume or landmark copies from other game franchises, glossy superhero armor, magical inventory beams, morphing vehicles, weightless cargo, spectacle explosions that erase an entire stronghold, or camera movement through solid geometry.
+
+SHOT 01 — START WITH NOTHING
+Final edit: 00:00–00:04. Generate 8 seconds.
+Camera: first-person, standing height, wide natural field of view. One continuous shot.
+Location: a cold, rocky coastline at dawn. Wet pebbles, wind-bent grass, conifers and mountains. A distant planetary body occupies part of the sky.
+Action: the player's ordinary, lightly scraped hands hold a rough stone. After a brief steady view, the player strikes a mineral-bearing rock once. Small fragments break away at the point of impact and fall onto the ground. The player lowers the stone slightly and looks up enough to reveal the wider frontier.
+The rock stays a rock throughout the shot. The motion is economical and physical. The environment feels beautiful, exposed and dangerous.
+Sound: close rock impact, falling chips, breath, surf and wind. A faint distant gunshot near the end establishes that other players inhabit this world.
+
+SHOT 02 — A PLACE WORTH DEFENDING
+Final edit: 00:04–00:09. Generate 8 seconds.
+Camera: first-person, one slow step backward from the entrance of the player's small base.
+Location: the same coastal biome later in the day. A compact player-built starter base with square stone foundations, rough stone walls, a corrugated-metal door and unfinished wooden frames where it is being expanded.
+Action: the player pulls the heavy metal door closed. Before it closes, the camera briefly sees a sleeping place, wooden storage boxes and a warm furnace inside. The door meets the frame, the latch engages, and the player takes one short step back, revealing the simple base exterior and its exposed surroundings.
+The building has believable modular construction and human scale. It is a small home assembled by survivors, with signs of use.
+Sound: door hinge, sheet-metal resonance, a positive latch click, furnace crackle fading behind the closed door, outdoor wind.
+
+SHOT 03 — TURN THE HAUL INTO A BETTER KIT
+Final edit: 00:09–00:13. Generate 8 seconds.
+Camera: first-person close view of a practical workbench, with the bench and hands in focus.
+Location: inside the same starter base, illuminated by warm work lights and a narrow cool daylight window.
+Action: the player's gloved hands lift a finished, worn service pistol from the workbench and perform one clear mechanical readiness check before bringing it to a low-ready position. Tools, spare springs, machined components and a partly dismantled weapon on the bench suggest the work that produced it.
+The firearm has a fixed, coherent design and natural proportions. The hands maintain a plausible grip and never intersect the slide or trigger guard.
+Sound: fabric movement, metal on wood, a short clean mechanical slide sound, low furnace ambience. No exaggerated weapon whoosh.
+
+SHOT 04 — ONE GOOD AMBUSH
+Final edit: 00:13–00:18. Generate 8 seconds.
+Camera: first-person gameplay, crouched behind a rough stone wall beside a scavenging route.
+Location: a weathered coastal loot site with abandoned utilitarian structures, scattered crates and scrub vegetation.
+Action: begin with the player already in cover, pistol held low. One armed rival in original industrial frontier gear crosses a clear opening about fifteen metres away. The player leans into the opening, raises the pistol and fires two deliberate shots. Muzzle flash, brief recoil and impact response are synchronized. The opponent drops behind the low cover, leaving the encounter's result visually clear without graphic detail. The player's view settles back onto the opening.
+Keep the encounter spatially simple and readable: one player viewpoint, one opponent, one firing lane. Maintain the same pistol as shot 03.
+Sound: clothing against stone, two close gun reports, short outdoor echoes, bullet impact, distant environmental ambience. No triumphant sting.
+
+SHOT 05 — TAKE THE KIT
+Final edit: 00:18–00:22. Generate 8 seconds.
+Camera: low, restrained three-quarter spectator view, moving laterally by less than a metre.
+Location: rocky ground near the same ambush route.
+Action: a survivor in original Bare gear kneels beside an opened field pack and a dropped rifle. They take one ammunition magazine and a small mechanical component from the pack and stow them in their own satchel. Their armed crewmate stands a few steps behind, watching the approach with a rifle held ready.
+Use the character and equipment design from bare-loot.webp: patched work clothing, scuffed industrial plates, practical open-face protective headgear and visible human faces. The mood is hurried and alert. The loot remains physical; a pickup does not become a glowing icon or vanish into a particle effect.
+Sound: fabric, pack buckles, magazine clatter, gravel under a boot, restrained wind.
+
+SHOT 06 — THE GROUND IS JUST THE BEGINNING
+Final edit: 00:22–00:27. Generate 8 seconds.
+Camera: controlled third-person ship chase view, offset slightly above and behind the Tin Finch.
+Location: just above the atmosphere of a planet, with a curved sunlit horizon below and dark space ahead.
+Action: the exact reference Tin Finch flies steadily forward. It makes a gentle, purposeful bank of only a few degrees, opening the view toward the next destination. Its exterior remains rigid and consistent; engine glow and the relative movement of the planetary horizon communicate travel.
+Keep the ship recognizably small and utilitarian. The cockpit, external cylinders and landing skids preserve their reference design. Do not transform the vessel or attempt a complete planet-to-planet journey within this shot.
+Sound: a restrained onboard-style mechanical engine vibration as trailer sound design, a soft radio static texture without speech. No wind or atmospheric jet roar in open space.
+
+SHOT 07 — LET THE DRILLS WORK
+Final edit: 00:27–00:33. Generate 8 seconds.
+Camera: grounded spectator camera, tracking slowly past the machinery at human height.
+Location: a remote mining outpost on a dry, unfamiliar planet. Rust-colored mineral seams, dark rock and a large distant moon. A modest stone-and-sheet-metal shelter, practical power equipment and defensive walls surround two automatic mining drills.
+Action: a powered auger rotates steadily into a mineral seam. Small ore pieces fall through a short metal chute into a clearly visible local collection bin. A survivor checks the fill level beside the bin while the second drill continues operating in the background.
+The outpost is small, improvised and vulnerable. Show the physical path from deposit to drill to local storage. This is a player-built resource operation, not a vast industrial complex.
+Sound: rhythmic drill vibration, motor whine, ore rattling into metal storage, dry wind.
+
+SHOT 08 — THE HAUL DOES NOT MOVE ITSELF
+Final edit: 00:33–00:38. Generate 8 seconds.
+Camera: a steady third-person view beside the Tin Finch's open side hatch, at chest height.
+Location: the same mining outpost, with the same drills still working behind the characters.
+Action: a survivor carries one compact, visibly heavy metal ore case with both hands, takes two deliberate steps to the open hatch and sets it down inside the ship. A second survivor keeps watch a few metres away. The hull rocks only subtly with the physical contact.
+The case has scuffed gray metal, two latches and one diagonal amber paint stripe. Preserve this case in later cargo shots. The case is small enough to fit the actual hatch of a five-metre utility ship. The hatch, cockpit and exterior cylinders retain their exact design.
+Sound: weighted footsteps, strained cloth, a solid cargo-case thud, the distant drills. Do not add a takeoff or door-closing sequence to this shot.
+
+SHOT 09 — TAKE YOUR HOME WITH YOU
+Final edit: 00:38–00:44. Generate 8 seconds.
+Camera: a smooth, walking-speed in-engine spectator move of about two metres through the IronWake's habitable interior.
+Location: the original IronWake's industrial workshop and cargo area. Worn blue-gray structural metal, rivets, warm task lights, strapped storage crates, a used workbench and visible bunks through a nearby open doorway.
+Action: follow the space at human scale while one crewmate secures the amber-striped ore case next to the workshop and another checks equipment. A window provides a brief, stable view of a planet outside.
+Make the home readable through practical detail: bedding, a mug, a hanging jacket, repaired tools, ration containers, storage and a workstation. Everything fits within a medium-sized industrial vessel. Keep the ship's layout coherent; no endless corridor or palace-like bridge.
+Sound: hull vibration, ventilation, fastening straps, soft tool clatter and boots on metal. The atmosphere is occupied and useful, not luxurious.
+
+SHOT 10 — EVERY HOME HAS SOMETHING TO LOSE
+Final edit: 00:44–00:50. Generate 8 seconds.
+Camera: a stable, wide in-engine spectator view with a restrained lateral drift. Use the approved broadside reference orbital-strike-top-cannon.webp.
+Location: the IronWake above a rugged coastline at sunset; an enemy player's fortified stone-and-sheet-metal compound below.
+Action: begin with the ship holding a nearly level broadside attitude and the LARGE ROOFTOP twin-barrel cannon already aimed over the near side of the hull toward the base. Fire one paired heavy salvo. Each muzzle flash originates exactly at its barrel tip. Both barrels recoil backward along their axes. Fast, brief luminous projectile traces continue straight along the barrels' established firing direction through clear air to the target.
+The nose cannon and small side-defense mounts remain idle. Projectiles never cross the bridge or hull. The ship never dives or twists to make the shot work.
+The impacts break a limited section of the compound's outer defenses, throwing dust and stone debris. The inner stronghold remains standing and visibly substantial. The shot communicates the beginning of a costly raid, with a defended target, not an effortless one-shot victory.
+Sound: a deep mechanical firing impulse and recoil thump close to the ship, followed by delayed, lower distant impact and falling debris. Leave room for a brief moment of silence after the salvo.
+
+SHOT 11 — BRING IT HOME
+Final edit: 00:50–00:56. Generate 8 seconds.
+Camera: first-person, one continuous grounded player view inside a fortified planetary main base at dusk.
+Location: a protected storage room with heavy stone walls, layered metal doors, organized cargo and warm practical lighting. Through an open doorway, the familiar Tin Finch is parked in the courtyard.
+Action: the player's hands lower the same amber-striped ore case onto a storage surface. The weight lands with a satisfying thud. The view turns gently toward the courtyard as an armed crewmate enters and closes the reinforced outer door. The final image holds on a quiet, occupied home behind real defenses.
+The scale and layered construction should make this planetary stronghold feel more defensible than the ship's thin-walled workshop. The place is earned through repeated runs; it is neither pristine nor invulnerable.
+Sound: the case landing, a crewmate's boots, the heavier final door latch, soft furnace crackle. End on the latch sound and a short breath of silence.
+
+END CARD — CREATE IN THE EDITOR, 00:56–01:00
+Clean near-black background. Warm-white Bare typography. Exact text:
+BARE
+THE GROUND IS JUST THE BEGINNING.
+JOIN THE WAITLIST
+BIVENO.COM
+
+Keep the end card still and readable for four seconds. Do not invent a release date, platform badge, award, review score or download availability.
+
+OPTIONAL VOICEOVER — RECORD AS ONE CONTINUOUS PERFORMANCE
+A grounded, intimate voice, calm at the beginning, gradually more resolved. No theatrical movie-trailer growl. Allow the pictures and game audio to breathe.
+
+00:00–00:04: “You start with nothing.”
+00:04–00:09: “Then you find something worth keeping.”
+00:13–00:18: “Out here, everything can change hands.”
+00:22–00:27: “And the ground is just the beginning.”
+00:27–00:33: “Work another world.”
+00:33–00:38: “Bring the haul home.”
+00:38–00:44: “Or take your home with you.”
+00:44–00:50: “Every home has something to lose.”
+00:50–00:56: “Build a life worth coming back to.”
+00:56–01:00: No speech. Let the name and final sound land.
+
+EDIT AND SOUND DIRECTION
+Treat this as an edited gameplay trailer with a clear progression: hands -> home -> equipment -> risk -> loot -> space -> production -> transport -> mobile home -> raid -> return.
+Use hard cuts and sound bridges. Rock impact can carry into the door latch; the workbench's metal click can lead into a gun report; the mining rhythm can introduce the ship's engine pulse.
+Begin sparse. Introduce a restrained low electronic pulse at the space reveal. Build with dry industrial percussion and a simple emotional synth motif. Pull the score down immediately before the rooftop salvo. Resolve warmly at the return home. Use one coherent score across the edit.
+Keep the best 4–6 seconds of each source clip according to the timeline. Do not speed up every interaction to force the full eight seconds into its edit slot.
+Let equipment, storage, extraction and transport communicate the game. Avoid extended beauty shots that never show what players do.
+Keep the ship scale consistent: Tin Finch about 5m; IronWake about 56m. People, doors, crates and machinery anchor scale.
+Use original designs throughout. A survival-game mechanical influence is not permission to copy another game's recognizable characters, cosmetics, logos or locations.
+Inspect every generated clip for grip/contact errors, vessel shape changes, wrong gun mounts, bent projectile paths and inexplicable cargo movement before selecting it.
+
+LOCAL DESIGN REFERENCES
+Use only clean artwork/model renders, without website text panels or screenshots of the page.
+Tin Finch exact design:
+D:/GameDev/Assets/TinFinch_TF01/Previews/01_Hero_small.jpg
+IronWake exact design:
+D:/GameDev/Assets/IronWake_IW09/Previews/01_Hero.png
+Bare survivor clothing and looting:
+D:/GameDev/Projects/RustMVP/website/public/assets/bare-loot.webp
+Automatic mining outpost:
+D:/GameDev/Projects/RustMVP/website/public/assets/planetary-mining.webp
+Mobile-home mood:
+D:/GameDev/Projects/RustMVP/website/public/assets/mobile-home.webp
+Approved top-cannon firing composition:
+D:/GameDev/Projects/RustMVP/website/public/assets/orbital-strike-top-cannon.webp
+Tin Finch at a player base:
+D:/GameDev/Projects/RustMVP/website/public/assets/frontier-landing-layout.webp
+
+MODEL WORKFLOW REFERENCES CHECKED
+Google Flow model/feature support:
+https://support.google.com/flow/answer/16352836?hl=en
+Google DeepMind Veo prompting guide:
+https://deepmind.google/models/veo/prompt-guide/
+
+This file is a creative production brief for the requested finished-game vision. It does not alter historical development records or represent a generated video as an actual gameplay capture.
+

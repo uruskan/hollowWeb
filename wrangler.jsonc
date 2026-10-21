@@ -1,0 +1,17 @@
+{
+  "name": "bare-devlog",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  // Domain routes are managed in Cloudflare: biveno.com/* and www.biveno.com/*.
+  // Keep their existing proxied DNS records. See DEPLOYMENT.md before changing routing.
+  "assets": {
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
+    "directory": "./dist",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "durable_objects": {"bindings": [{"name": "WAITLIST", "class_name": "Waitlist"}]},
+  "migrations": [{"tag": "waitlist-v1", "new_sqlite_classes": ["Waitlist"]}]
+}

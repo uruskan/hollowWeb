@@ -1,0 +1,581 @@
+{
+  "assetRecords": [
+    {
+      "asset": "survival-results.svg",
+      "type": "report",
+      "sources": [
+        "docs/evidence/survival-2026-10-03/survival-final-result.json",
+        "docs/evidence/survival-2026-10-03/wake-reconnect-result.json",
+        "docs/survival_persistence.md"
+      ]
+    },
+    {
+      "asset": "building-results.svg",
+      "type": "report",
+      "sources": [
+        "docs/evidence/building-2026-10-04/ui-scenario-4.json",
+        "docs/building_native_implementation.md",
+        "docs/building_acceptance.md"
+      ]
+    },
+    {
+      "asset": "package-results.svg",
+      "type": "report",
+      "sources": [
+        "docs/evidence/private-server-2026-10-04/final-package.json",
+        "docs/evidence/private-server-2026-10-04/runtime-progress.json",
+        "docs/server_architecture.md"
+      ]
+    },
+    {
+      "asset": "streaming-results.svg",
+      "type": "report",
+      "sources": [
+        "docs/architecture/HANDOFF.md",
+        "docs/architecture/FOUNDATION.md"
+      ]
+    },
+    {
+      "asset": "repair-results.svg",
+      "type": "report",
+      "sources": [
+        "HollowUniverseABTestB/docs/DEVELOPMENT.md",
+        "HollowUniverseABTestB/docs/REPAIR_STATUS.md"
+      ]
+    },
+    {
+      "asset": "unreal-spherical-terrain.png",
+      "type": "capture",
+      "source": "docs/planet/evidence/geography-daylight-orbit-20261002-image-1.png",
+      "sha256": "9ab4d13781bea0685dd4940ab3309a178c945d17621d05e4421734f69582562e"
+    },
+    {
+      "asset": "unreal-woodland.png",
+      "type": "capture",
+      "source": "docs/planet/evidence/woodland-daylight-preview-20261002-image-1.png",
+      "sha256": "bc5131e71ab9d65ec7b57f26cb96066fd6b7510618c45ebfd508b20d5ebd0747"
+    },
+    {
+      "asset": "original-door-kit.png",
+      "type": "capture",
+      "source": "docs/evidence/asset-integration-2026-10-04/art-single-closed-image-1.png",
+      "sha256": "fb9a544eff8318e27442598da5f298ffc4cbc2b641de65e6050da638ceaf08b2"
+    },
+    {
+      "asset": "held-workshop-bow.png",
+      "type": "capture",
+      "source": "User-supplied screenshot, 15 October 2026"
+    },
+    {
+      "asset": "held-workshop-tps.png",
+      "type": "capture",
+      "source": "Current game binary; --view held-editor --item bow --camera tps --outfit 4 --target-distance 3 --editor-tab hands --action draw --phase 0.6",
+      "note": "Fresh rendered capture, no profile save or rebuild performed. Engine logged one ObjectDB leak on exit."
+    },
+    {
+      "asset": "current-ground.png",
+      "type": "capture",
+      "source": "Current Godot build, isolated temporary world, port 27177; --view ground --host --in-process --spawn origin --hour 10 --quality high --mute",
+      "note": "Screenshot completed, client disconnected and server stopped. Exit logged Texture/ObjectDB leak warnings; not a clean full-test claim."
+    },
+    {
+      "asset": "admin-camera-third-person.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/admin-self-camera/admin-camera-walk.jpg",
+      "sha256": "95f3ad52ee504b48efc5a8bedc84f25c3b9929f5995d99ecf85d67b9ac172ecb"
+    },
+    {
+      "asset": "f1-tools-building.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/admin-building/f1-tools.png",
+      "sha256": "c95a72b04e4255489586f6bdef10bbedb9e0b2f094cf116edf8f07363c968ce0"
+    },
+    {
+      "asset": "free-crafting.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/admin-building/free-crafting.png",
+      "sha256": "bc0444f0794ac04b2e25dda14bf5ecffee79e51691003fcecf28947971aa27c7"
+    },
+    {
+      "asset": "menu-disconnect.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/disconnect/connected-menu.png",
+      "sha256": "f2abaf0e86b15cee45ee7211707cd2e585fba26926d7993b1c531509b331ce40"
+    },
+    {
+      "asset": "electricity-wind-turret-sam.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/electricity/electricity-overview.png",
+      "sha256": "a4fd9a668f78083d3bacf2347f9708733362f5068597155467c665540b71041d"
+    },
+    {
+      "asset": "electricity-ports.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/electricity/electricity-ports.png",
+      "sha256": "3a2f4b5b0e742614862ed9a09ebf09ef02209872486d955317c751a2ff229e81"
+    },
+    {
+      "asset": "crosshair-settings.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/crosshair/settings-crosshair.png",
+      "sha256": "0cf875b3271cbe65a7eb420aeef496b5bedefabf1fab530ada9e041890421fb3"
+    },
+    {
+      "asset": "crosshair-ring-dot.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/crosshair/1281x721-scale1.25-ringdot.png",
+      "sha256": "201b924425f245c9a67b8577e9867f056984fb2f5239de9280df2b2a8834064a"
+    },
+    {
+      "asset": "drop-all-inventory.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/drop-all/inventory-1600.png",
+      "sha256": "7e96c410c60cfc772588ce648ee4ae6b346ad9c02ae6bc9aca864e2045fb51ec"
+    },
+    {
+      "asset": "meadow-dawn.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/ground/grass/meadow-low-sun-dawn.jpg",
+      "sha256": "f16657d3167620c193a77bacc6705f90302a4c03d2e401df5948c225d91a0dad"
+    },
+    {
+      "asset": "meadow-midday.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/ground/grass/meadow-10.jpg",
+      "sha256": "4b97cb08eb9e626db1c9222a3562a4663e9d1fddeafab910ae2a90db9c8c57f7"
+    },
+    {
+      "asset": "meadow-dusk.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/ground/grass/meadow-low-sun-dusk.jpg",
+      "sha256": "882d757a5575b61c2e67325b4589b83615de14d40f6d055188d075b1ecc0bad9"
+    },
+    {
+      "asset": "meadow-wood-edge.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/ground/grass/clearing-edge-10.jpg",
+      "sha256": "87478275246a669e3b1183a7a59d056333168fe47e57de046b4a7f127c628365"
+    },
+    {
+      "asset": "item-research-bench.png",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-research-table-20261019/icon-slots.png",
+      "sha256": "1f136c0d95ce84e3c1248e24518ca461f1773cd6dd08bbd12360e890410e426e"
+    },
+    {
+      "asset": "item-blueprint.png",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-blueprint-20261019/icon-slots.png",
+      "sha256": "fa51fc6ca18f3824b97319417457a64cac4702413102b9adf3bc03ddc074d579"
+    },
+    {
+      "asset": "item-explosives.png",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-explosives-20261019/icon-slots.png",
+      "sha256": "d5409d2edb71e27943eb1960bc8c357b2e72b8f32b14459d4800c9176715b267"
+    },
+    {
+      "asset": "item-sign-plate.png",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-sign-plate-20261018/icon-slots.png",
+      "sha256": "d3d170fb044cc1036f0a56a29abae27cf52f840d11ab9b3231d1dc7fcc7da893"
+    },
+    {
+      "asset": "item-sewing-kit.png",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-sewing-kit-r02-20261018/icon-slots.png",
+      "sha256": "92b456fdad283434d9d9b1cba8e64821b427188477cd1653696cdfeab8fabe4a"
+    },
+    {
+      "asset": "item-chest-plate.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-chest-plate-20261020/chest-plate-lod0.png",
+      "sha256": "9601ad0313298311c1cf9d268fb061a0b3d638bed3c918a96af45a129172ba44"
+    },
+    {
+      "asset": "doors-triangle-airlock-open-above.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/abtest-b/doors/hosted/airlock-triangle-both-in-open-above.jpg",
+      "sha256": "458b3fa54f5f45f864533ee59e2e351ecc88f73185a5ce64e3a21e94694c204e"
+    },
+    {
+      "asset": "doors-double-door-shut.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/abtest-b/doors/hosted/airlock-room-shut-outside-first.jpg",
+      "sha256": "e2e3b2b169fe0686a9ce627f1d751563d2d46fe9729944bf0d824b9077e4628f"
+    },
+    {
+      "asset": "doors-room-airlock-open-inside.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/abtest-b/doors/hosted/airlock-room-open-inside.jpg",
+      "sha256": "5271c1cf74448734087f40aabcef824b2e9c5b3889c8a5985c479aa610589630"
+    },
+    {
+      "asset": "doors-room-airlock-open-above.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/abtest-b/doors/hosted/airlock-room-open-above.jpg",
+      "sha256": "5a2bbef71950f39c4044c7981f9a668d2a4b3fc637c71c106c47b443dc46ed05"
+    },
+    {
+      "asset": "vehicles-workbench-tech-tree.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/vehicles/bay/rebuild-techtree.jpg",
+      "sha256": "9977944322cc6c08010785aa968314d0198d31d8c9d9ed00f185dc87144f35ac"
+    },
+    {
+      "asset": "vehicles-togg-at-bay.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/vehicles/bay/rebuild-togg.jpg",
+      "sha256": "bca542a2323ca9eb7be0db77bfd47453c9560abc131b12f2b1f738c13132148e"
+    },
+    {
+      "asset": "vehicles-togg-chassis.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/vehicles/bay/rebuild-bare.jpg",
+      "sha256": "4e179d1032459b992c539c35d078cc573eda076e0b17d185aadf4c7c4be883c0"
+    },
+    {
+      "asset": "vehicles-monster-togg.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/vehicles/bay/rebuild-monster.jpg",
+      "sha256": "b37b5ab68c3eeb5580277a3c8ad52525d0837b000ad3b522fe266348adf5d86f"
+    },
+    {
+      "asset": "vehicles-bay-screen.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/vehicles/bay/rebuild-screen-monster.jpg",
+      "sha256": "4572df11d873c7efb970d26298e1ef43d61c79ea78a3f9908087d5f638d20cf7"
+    },
+    {
+      "asset": "vehicles-inspect.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/vehicles/bay/rebuild-inspect.jpg",
+      "sha256": "67d92bafd7d99fedfa0b7c1218fb0997520ec1e35d66f3dc0dfcaa3e85e6b150"
+    },
+    {
+      "asset": "vehicles-monster-tyres-screen.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/vehicles/bay/vehicle-screen.png",
+      "sha256": "2544433b506e2dbbb8587f2f4f513dd6f7f4034cb38f298e97b8d3c7bbe14140"
+    },
+    {
+      "asset": "earth-land-map.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/earth-land/earth-v2-map.png",
+      "sha256": "0efc23bda2516cc268002aadbac15d48ebb7454b65e3c2323ca23e35996d76c6"
+    },
+    {
+      "asset": "t2-coastal-scarp.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/t2-formations/after-coastal-scarp.jpg",
+      "sha256": "82ad62300f85330ceb3026578c1df836777e0d7a69fdc17619c5be267635cc7b"
+    },
+    {
+      "asset": "item-salvage.png",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-salvage-20261019/icon-slots.png",
+      "sha256": "951e63bc3dc5c618f4fd685d17b5844880f1bdb7043a868572e7a3734b812c99"
+    },
+    {
+      "asset": "item-woven-shirt.png",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/item-art-woven-shirt-20261020/icon-slots.png",
+      "sha256": "d43560b80d86b26f6fd9e3432ce192af95e1f8ab7e03092c9ce521c6696d0486"
+    },
+    {
+      "asset": "meadow-hillside-low-sun.jpg",
+      "type": "capture",
+      "source": "HollowIsland/docs/images/ground/grass/clearing-hillside-low-sun.jpg",
+      "sha256": "a6b1fbfeac32959f9a216cf87e31fdc93adf1d66936122b4ef0905ab32b511f9"
+    }
+  ],
+  "articleRecords": [
+    {
+      "slug": "2026-10-02-spherical-terrain-experiments",
+      "sources": [
+        "historical:docs/planet/evidence/geography-core-20261002.json",
+        "historical:docs/planet/evidence/woodland-daylight-preview-20261002.json"
+      ],
+      "images": [
+        "/assets/devblog/unreal-spherical-terrain.png",
+        "/assets/devblog/unreal-woodland.png"
+      ]
+    },
+    {
+      "slug": "2026-10-03-survival-that-remembers",
+      "sources": [
+        "historical:docs/survival_persistence.md"
+      ],
+      "images": [
+        "/assets/devblog/survival-results.svg"
+      ]
+    },
+    {
+      "slug": "2026-10-04-building-and-damage",
+      "sources": [
+        "historical:docs/building_native_implementation.md",
+        "historical:docs/building_acceptance.md"
+      ],
+      "images": [
+        "/assets/devblog/building-results.svg"
+      ]
+    },
+    {
+      "slug": "2026-10-04-private-playtest-package",
+      "sources": [
+        "historical:docs/evidence/private-server-2026-10-04/runtime-progress.json",
+        "historical:docs/server_architecture.md"
+      ],
+      "images": [
+        "/assets/devblog/package-results.svg"
+      ]
+    },
+    {
+      "slug": "2026-10-05-original-kits-and-ship-handoff",
+      "sources": [
+        "historical:docs/asset_integration.md"
+      ],
+      "images": [
+        "/assets/devblog/original-door-kit.png",
+        "/assets/tin-finch-engine.webp"
+      ]
+    },
+    {
+      "slug": "2026-10-07-world-streaming-and-rebuild",
+      "sources": [
+        "historical:docs/architecture/HANDOFF.md",
+        "historical:docs/architecture/FOUNDATION.md"
+      ],
+      "images": [
+        "/assets/devblog/streaming-results.svg"
+      ]
+    },
+    {
+      "slug": "2026-10-10-first-hollow-universe-foundations",
+      "sources": [
+        "current:docs/ARCHITECTURE.md",
+        "current:docs/HOW_IT_WORKS.md"
+      ],
+      "images": [
+        "/assets/devblog/system-map.jpg",
+        "/assets/devblog/first-base.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-12-star-systems-with-identity",
+      "sources": [
+        "current:docs/progress-generator-v2.md"
+      ],
+      "images": [
+        "/assets/devblog/system-map.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-12-survival-game-takes-shape",
+      "sources": [
+        "current:docs/progress-ground.md",
+        "current:docs/GROUND.md"
+      ],
+      "images": [
+        "/assets/devblog/crafting.jpg",
+        "/assets/devblog/first-base.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-13-first-base-to-tin-finch",
+      "sources": [
+        "current:docs/progress-ground.md",
+        "current:docs/GROUND.md"
+      ],
+      "images": [
+        "/assets/devblog/first-base.jpg",
+        "/assets/devblog/tin-finch-flight.jpg",
+        "/assets/tin-finch-cockpit.webp"
+      ]
+    },
+    {
+      "slug": "2026-10-13-actions-that-read-clearly",
+      "sources": [
+        "current:docs/GROUND_SYSTEMS.md",
+        "current:docs/progress-ground.md"
+      ],
+      "images": [
+        "/assets/devblog/crafting.jpg",
+        "/assets/devblog/first-base.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-14-places-and-shared-systems",
+      "sources": [
+        "current:docs/MONUMENTS.md",
+        "current:docs/GROUND_SYSTEMS.md"
+      ],
+      "images": [
+        "/assets/devblog/research-outpost.jpg",
+        "/assets/devblog/crafting.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-15-whole-world-and-iron-wake",
+      "sources": [
+        "current:docs/WHOLE_WORLD.md",
+        "current:docs/WALKING_GROUND.md",
+        "current:docs/IRON_WAKE.md"
+      ],
+      "images": [
+        "/assets/devblog/iron-wake-flight.jpg",
+        "/assets/devblog/walking-forest.png",
+        "/assets/devblog/tin-finch-flight.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-15-hollow-universe-current-direction",
+      "sources": [
+        "current:docs/DESIGN.md",
+        "current:docs/DEVELOPMENT.md"
+      ],
+      "images": [
+        "/assets/hollow-earth.png",
+        "/assets/hollow-galaxy.png"
+      ]
+    },
+    {
+      "slug": "2026-10-15-controls-survival-and-salvaged-axe",
+      "sources": [
+        "current:docs/DEVELOPMENT.md",
+        "current:docs/REPAIR_STATUS.md"
+      ],
+      "images": [
+        "/assets/devblog/current-ground.png",
+        "/assets/devblog/repair-results.svg"
+      ]
+    },
+    {
+      "slug": "2026-10-15-held-item-workshop",
+      "sources": [
+        "current:docs/HELD_ITEMS.md",
+        "current:game/scripts/Characters/HeldItemEditor.cs",
+        "current:game/scripts/Characters/HeldItemEditor.Inspector.cs"
+      ],
+      "images": [
+        "/assets/devblog/held-workshop-bow.png",
+        "/assets/devblog/held-workshop-tps.png"
+      ]
+    },
+    {
+      "slug": "2026-10-16-admin-tools-shadows-and-leaving-a-game",
+      "sources": [
+        "HollowIsland:docs/archive/DEVELOPMENT.md (F1 admin BGrade and free construction; F1 admin self camera; Disconnect from the ground menu; 97% loading fix and shadow budgets)",
+        "HollowIsland:docs/images/admin-building, admin-self-camera, disconnect"
+      ],
+      "images": [
+        "/assets/devblog/admin-camera-third-person.jpg",
+        "/assets/devblog/f1-tools-building.jpg",
+        "/assets/devblog/free-crafting.jpg",
+        "/assets/devblog/menu-disconnect.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-18-wires-wind-power-and-a-centred-crosshair",
+      "sources": [
+        "HollowIsland:docs/archive/DEVELOPMENT.md (Electricity and device authorization implementation; Centered configurable ground crosshair; Inventory backpack DROP ALL)",
+        "HollowIsland:docs/archive/ELECTRICITY_AND_AUTHORIZATION.md",
+        "HollowIsland:docs/images/electricity, crosshair, drop-all"
+      ],
+      "images": [
+        "/assets/devblog/electricity-wind-turret-sam.jpg",
+        "/assets/devblog/electricity-ports.jpg",
+        "/assets/devblog/crosshair-settings.jpg",
+        "/assets/devblog/crosshair-ring-dot.jpg",
+        "/assets/devblog/drop-all-inventory.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-20-a-meadow-worth-walking-through",
+      "sources": [
+        "HollowIsland:docs/archive/DEVELOPMENT.md (The ground: no more tiles under the grass; T4 and T5: the grass rebuilt as clumps on tiles; footwear-aware recorded footstep banks)",
+        "HollowIsland:docs/archive/WALKING_GROUND.md",
+        "HollowIsland:docs/images/ground/grass"
+      ],
+      "images": [
+        "/assets/devblog/meadow-dawn.jpg",
+        "/assets/devblog/meadow-midday.jpg",
+        "/assets/devblog/meadow-wood-edge.jpg",
+        "/assets/devblog/meadow-dusk.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-20-replacing-stand-ins-with-original-item-art",
+      "sources": [
+        "HollowIsland:docs/archive/DEVELOPMENT.md (18 to 20 October item art entries)",
+        "HollowIsland:docs/archive/ITEM_ART_REPLACEMENT_PLAN.md",
+        "HollowIsland:docs/images/item-art-*"
+      ],
+      "images": [
+        "/assets/devblog/item-research-bench.png",
+        "/assets/devblog/item-blueprint.png",
+        "/assets/devblog/item-explosives.png",
+        "/assets/devblog/item-sign-plate.png",
+        "/assets/devblog/item-sewing-kit.png",
+        "/assets/devblog/item-salvage.png",
+        "/assets/devblog/item-woven-shirt.png",
+        "/assets/devblog/item-chest-plate.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-20-doors-that-behave-the-same-from-both-sides",
+      "sources": [
+        "HollowIsland:docs/archive/DOORS.md",
+        "HollowIsland:docs/archive/DEVELOPMENT.md (doors D0 to D4 and reviews, 20 October)",
+        "HollowIsland:docs/images/abtest-b/doors/hosted"
+      ],
+      "images": [
+        "/assets/devblog/doors-triangle-airlock-open-above.jpg",
+        "/assets/devblog/doors-double-door-shut.jpg",
+        "/assets/devblog/doors-room-airlock-open-inside.jpg",
+        "/assets/devblog/doors-room-airlock-open-above.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-20-one-module-system-for-every-vehicle",
+      "sources": [
+        "HollowIsland:docs/archive/VEHICLES.md",
+        "HollowIsland:docs/archive/MINICOPTER.md",
+        "HollowIsland:docs/archive/MOTORBOAT.md",
+        "HollowIsland:docs/archive/DEVELOPMENT.md (20 October vehicle entries)",
+        "HollowIsland:docs/images/vehicles/bay"
+      ],
+      "images": [
+        "/assets/devblog/vehicles-workbench-tech-tree.jpg",
+        "/assets/devblog/vehicles-togg-at-bay.jpg",
+        "/assets/devblog/vehicles-togg-chassis.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-21-a-bay-you-drive-into-and-a-truck-that-sounds-like-one",
+      "sources": [
+        "HollowIsland:docs/archive/VEHICLES.md section 9.10 and 9.11",
+        "HollowIsland:docs/archive/DEVELOPMENT.md (21 October vehicle entries)",
+        "HollowIsland:docs/images/vehicles/bay"
+      ],
+      "images": [
+        "/assets/devblog/vehicles-monster-togg.jpg",
+        "/assets/devblog/vehicles-bay-screen.jpg",
+        "/assets/devblog/vehicles-monster-tyres-screen.jpg",
+        "/assets/devblog/vehicles-inspect.jpg"
+      ]
+    },
+    {
+      "slug": "2026-10-20-rebuilding-earths-terrain",
+      "sources": [
+        "HollowIsland:docs/archive/DEVELOPMENT.md (World terrain entries, 19 and 20 October)",
+        "HollowIsland:docs/archive/WORLD_TERRAIN_PLAN.md",
+        "HollowIsland:docs/images/earth-land, t2-formations"
+      ],
+      "images": [
+        "/assets/devblog/earth-land-map.jpg",
+        "/assets/devblog/t2-coastal-scarp.jpg"
+      ]
+    }
+  ]
+}

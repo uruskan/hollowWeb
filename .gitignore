@@ -1,0 +1,7 @@
+/dist/
+/.wrangler/
+/node_modules/
+/qa/
+.env*
+.dev.vars*
+/private/

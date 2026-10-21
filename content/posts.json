@@ -1,0 +1,2021 @@
+[
+  {
+    "slug": "2026-09-20-network-first",
+    "date": "2026-09-20",
+    "order": 1,
+    "title": "The first milestone: two networked players",
+    "summary": "The project began with a C++ server and two Godot clients, proving prediction, correction and remote movement before adding a world.",
+    "category": "Engineering",
+    "verificationStatus": "Historical prototype verified",
+    "paragraphs": [
+      "The first playable experiment was deliberately small: a standalone C++ server, two Godot clients and a diagnostic view of their positions. Clients sent movement intent, the server decided the result, and each client predicted its own motion while smoothing the other player. Getting that relationship working first gave later interface and world work a real multiplayer foundation.",
+      "Both ordinary local sessions and a bounded delay, jitter and packet-loss test completed without disconnects. A separate test deliberately displaced one client's prediction and confirmed that it returned to the server's position. Launchers also learned to clean up only the processes they owned, and the project gained its first Git checkpoint and asset versioning setup.",
+      "This was a two-player movement experiment on an empty plane. It did not include collision, weapons, inventory, persistence or a claim about internet-scale capacity. The custom transport was later replaced during the Unreal migration; the lesson that gameplay starts with authority remained."
+    ],
+    "highlights": [
+      "Two actual clients observed each other",
+      "Intent, prediction, acknowledgement and correction connected",
+      "Deliberate prediction error recovered",
+      "Versioned project and repeatable launch workflow"
+    ],
+    "limitations": [
+      "Historical Godot/C++ transport, superseded by native Unreal networking",
+      "Two clients and collision-free motion only"
+    ],
+    "image": {
+      "src": "/assets/foothold.webp",
+      "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+      "caption": "A first foothold and a place to return to.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-20-inventory-rules",
+    "date": "2026-09-20",
+    "order": 2,
+    "title": "An inventory that the server actually owns",
+    "summary": "Inventory, equipment, crafting and shared-container interactions arrived as connected rules and interface behavior.",
+    "category": "Gameplay",
+    "verificationStatus": "Historical fixture tests passed",
+    "paragraphs": [
+      "The next slice turned the network experiment into something that could be used: menus, a hotbar, inventory, equipment, a character preview, crafting and shared-container screens. Item movement was a request to the server, not a local subtraction followed by a hopeful update. Two players could observe changes to the same container while keeping their private inventories separate.",
+      "The recorded fixture tests exercised stack splitting, equipment appearance, timed crafting, ingredient deductions and cancellation refunds. They also checked that an outdated view could not duplicate loot or silently take a replacement item, and that changing container permission closed access. Those small consistency rules are the foundation of a future full-loot game.",
+      "These demonstrations used a temporary item and recipe catalog. That catalog was retired on 1 October so the project could concentrate on one real weapon slice. The rule layer and interaction design carried forward into the Unreal prototype, but this article is not a claim that the current test map contains crafting stations or loot-filled buildings."
+    ],
+    "highlights": [
+      "Private inventory and public equipment separated",
+      "Shared loot changed for both players",
+      "Craft cancellation returned ingredients",
+      "Stale actions did not duplicate items"
+    ],
+    "limitations": [
+      "Temporary catalog and fixtures are historical",
+      "No death, corpse or persistent economy loop"
+    ],
+    "image": {
+      "src": "/assets/foothold.webp",
+      "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+      "caption": "A first foothold and a place to return to.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-20-inventory-feel",
+    "date": "2026-09-20",
+    "order": 3,
+    "title": "Making the small interactions feel deliberate",
+    "summary": "A series of interface passes refined splitting, quick looting, menu closure, typography and movement while the inventory is open.",
+    "category": "Gameplay",
+    "verificationStatus": "Historical controls tests passed",
+    "paragraphs": [
+      "A working inventory still has to feel predictable. The interface gained whole-stack dragging, half and third splits, an amount slider and timed hover looting with independent progress indicators. Dropping outside a valid slot cancels the gesture. Starting several hover transfers does not force each circle to wait for the previous one.",
+      "Closing loot became immediate on screen, even while the server acknowledgement was still in flight. An older snapshot could no longer reopen the panel. Movement remained available through inventory and crafting screens, while typing into search correctly suppressed movement keys. Free-look, camera input, slot sizes, panel transparency and typography were refined in the same pass.",
+      "The important boundary stayed intact: the interface can respond immediately to a gesture, but the item total changes only after the authoritative result. Future wounded and respawn screens were recorded as design references, not added as imaginary completed systems."
+    ],
+    "highlights": [
+      "Half, third and slider-based stack splits",
+      "Parallel hover-loot feedback",
+      "Immediate closing without stale-screen reopening",
+      "Movement and text entry use different input rules"
+    ],
+    "limitations": [
+      "Historical Godot interface validation",
+      "Wounded, death and respawn remained future work"
+    ],
+    "image": {
+      "src": "/assets/coast.webp",
+      "alt": "Coastal landscape from the original menu artwork",
+      "caption": "The coast and the first journey into the world.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-20-world-materials",
+    "date": "2026-09-20",
+    "order": 4,
+    "title": "Building a traceable world-art library",
+    "summary": "World research became a bounded asset plan with preserved sources, acquisition records and isolated import checks.",
+    "category": "Worldbuilding",
+    "verificationStatus": "Historical acquisition and import checks",
+    "paragraphs": [
+      "World production started with a practical question: which trees, terrain surfaces, cliffs and ground cover could actually be brought into the engine? The early art direction explored temperate, snow and desert regions, then narrowed the asset list to usable source formats. A single birch preview established scale, cutout transparency and lighting before the scene became a forest.",
+      "Fourteen supplied source files were checked against recorded sizes and hashes. Additional vegetation sources and the supplied resource-node models were inventoried and preserved. A supplied monument reference was retained for the prototype study. These were acquisition and adaptation tasks, not claims that the team modeled every rock, tree or building from scratch.",
+      "That distinction matters for the public journal too. The world work is about selection, conversion, materials and composition. Third-party originals remain credited, and keeping a source in the private working library does not make it a public download."
+    ],
+    "highlights": [
+      "Three-biome art direction",
+      "Isolated birch import before mass placement",
+      "Source and acquisition records preserved",
+      "Resource-node inputs verified"
+    ],
+    "limitations": [
+      "Asset ownership and attribution vary by source",
+      "No public source-asset redistribution implied"
+    ],
+    "image": {
+      "src": "/assets/biome-overview.png",
+      "alt": "Overhead terrain study showing forest, snow and desert regions",
+      "caption": "The original three-biome layout, September 2026.",
+      "kind": "study"
+    }
+  },
+  {
+    "slug": "2026-09-20-three-biome-world",
+    "date": "2026-09-20",
+    "order": 5,
+    "title": "The first world: forest, snow and desert",
+    "summary": "A 1.5 km art study brought the terrain, vegetation, river, road and coastline together through eight visual passes.",
+    "category": "Worldbuilding",
+    "verificationStatus": "Historical art baseline accepted",
+    "paragraphs": [
+      "The first world study covered roughly 1.5 km, with a saved heightfield, branching ridges, lowlands, a ravine, sandstone canyon, coastal inlets and a river reaching the sea. Its final land mix was approximately 40% temperate, 31% snow and 29% desert. Snow was a geographic region rather than a rule that simply painted every high point white.",
+      "Eight capture passes changed the scene substantially. A repeated northern mountain wall was rejected; overly smooth landforms, floating rocks, excessive fog, patterned road markings and water artifacts were corrected. Trees, undergrowth, wind, resource heaps, a road and a bridge gave the inspection scene enough variety to walk through and judge.",
+      "The result was accepted as a starting point and preserved. Its dense views still ran well below the eventual frame-rate target, and terrain following was an inspection aid rather than authoritative collision. This large art study is historical: today's character and weapon work uses a small flat test map."
+    ],
+    "highlights": [
+      "Three geographic biomes across mixed terrain",
+      "Eight visual iteration passes",
+      "River, coastline, road and bridge composition",
+      "Preserved starting point with ground walkthrough"
+    ],
+    "limitations": [
+      "Art scene, not a production multiplayer map",
+      "Historical 36–110 FPS camera samples at 1600×900 on RTX 2070 SUPER",
+      "Water was visual and full terrain collision was absent"
+    ],
+    "image": {
+      "src": "/assets/biome-overview.png",
+      "alt": "Overhead terrain study showing forest, snow and desert regions",
+      "caption": "The original three-biome layout, September 2026.",
+      "kind": "study"
+    },
+    "media": [
+      {
+        "src": "/assets/beyond.webp",
+        "alt": "A distant planetary landscape",
+        "caption": "Exploring unfamiliar worlds.",
+        "kind": "concept",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-09-21-world-performance",
+    "date": "2026-09-21",
+    "order": 1,
+    "title": "Keeping the world, reducing its cost",
+    "summary": "The first optimization pass retained the scene's placements while improving foliage detail selection, culling and batching.",
+    "category": "Engineering",
+    "verificationStatus": "Historical measured improvement; target missed",
+    "paragraphs": [
+      "The next day started with the most expensive forest and river views. The optimization brief was to retain the world rather than solve performance by removing it. Work focused on when foliage changes detail, how canopy groups are culled and how repeated pieces are submitted for drawing.",
+      "All 449,063 visual placements were retained. Grouping monument meshes removed 214 separate drawables, and foliage detail-selection changes improved the matched heavy views. The final short camera samples ranged from about 48 to 139 FPS on the recorded machine and settings. That was progress, but it did not meet the newly clarified 144 FPS target across the world.",
+      "The evidence pointed toward rendering work rather than a blanket conclusion about an engine limit. The project preserved the measured result and opened an Unreal migration assessment instead of declaring the target reached."
+    ],
+    "highlights": [
+      "Scene density and placements retained",
+      "Foliage detail and culling adjusted",
+      "Repeated meshes batched",
+      "144 FPS gap documented honestly"
+    ],
+    "limitations": [
+      "Short fixed-camera samples, not a traversal or multiplayer load test",
+      "Godot result superseded by the Unreal direction"
+    ],
+    "image": {
+      "src": "/assets/beyond.webp",
+      "alt": "A distant planetary landscape",
+      "caption": "Exploring unfamiliar worlds.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-21-menu-to-world",
+    "date": "2026-09-21",
+    "order": 2,
+    "title": "From the menu into the world study",
+    "summary": "The existing art scene was connected to local play so the ordinary HUD and inventory could be used inside it.",
+    "category": "Gameplay",
+    "verificationStatus": "Historical local-play checks passed",
+    "paragraphs": [
+      "Before changing engines, the world study was connected to the existing game flow. Starting a local server from the menu could bring the player into the landscape with the normal HUD, inventory and crafting screens. The same helper could join an existing local session and clean up its own server when appropriate.",
+      "The world and interface now shared an origin, and visual height sampling placed the camera, remote players and test objects on the landscape. A real-window controls check and menu, play and inventory review passed. The recorded world preparation took roughly 28 seconds, making startup cost visible rather than hiding it behind a successful connection.",
+      "This remained a bridge into the art scene. Server movement still used the earlier horizontal rules; the change did not add physical building or terrain collision, harvesting or combat."
+    ],
+    "highlights": [
+      "Local server start and join connected to the menu",
+      "Ordinary HUD and inventory inside the art scene",
+      "Owned-process lifecycle checked",
+      "Startup cost recorded"
+    ],
+    "limitations": [
+      "Visual terrain height was not server collision",
+      "Historical Godot local-play path"
+    ],
+    "image": {
+      "src": "/assets/coast.webp",
+      "alt": "Coastal landscape from the original menu artwork",
+      "caption": "The coast and the first journey into the world.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-21-unreal-port",
+    "date": "2026-09-21",
+    "order": 3,
+    "title": "Moving the prototype to Unreal",
+    "summary": "The project moved to Unreal while keeping the rule layer and replacing the custom transport with native replication and RPCs.",
+    "category": "Engineering",
+    "verificationStatus": "Historical build and native network checks passed",
+    "paragraphs": [
+      "The engine migration preserved the useful engine-independent rules and rebuilt their runtime around Unreal's native networking. Listen hosting, private replicated inventory, public player appearance and reliable gameplay requests took over from the earlier custom transport. The interface was rebuilt with Slate, including its live character preview.",
+      "The world export was substantial: 526 unique meshes, 456,753 mesh instances, 144 terrain tiles and 478 texture references. Conversion had to preserve handedness, winding, scale, materials and actual instance transforms. An early exporter returned identity transforms for some instanced meshes; comparing the export with the running source scene caught the problem before it became an accepted map.",
+      "A real editor build succeeded, and two native processes passed five host and fifteen client checks. This was a working migration checkpoint, not a claim that every visual, interaction and performance acceptance gate had been completed."
+    ],
+    "highlights": [
+      "Native Unreal replication replaced custom transport",
+      "Reusable C++ rules retained",
+      "World source transforms checked",
+      "Two-process host and client tests passed"
+    ],
+    "limitations": [
+      "Historical Unreal 5.8.2 checkpoint",
+      "Full visual and interaction parity remained incomplete"
+    ],
+    "image": {
+      "src": "/assets/foothold.webp",
+      "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+      "caption": "A first foothold and a place to return to.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-21-native-interactions",
+    "date": "2026-09-21",
+    "order": 4,
+    "title": "A package, real input and the limits of parity",
+    "summary": "The native build became a standalone package, while interaction testing separated widget behavior from real operating-system input.",
+    "category": "Gameplay",
+    "verificationStatus": "Historical package and scoped interaction checks",
+    "paragraphs": [
+      "The migrated prototype produced a standalone development package and passed the same small host/client network exercise. Nine direct widget-handler checks covered splitting, slider dragging, outside-drop cancellation, closing stale loot and parallel hover transfers. Portrait lighting, font scale, colors and icon sizing also received targeted corrections.",
+      "Real input testing added a different kind of evidence. Holding movement through inventory and crafting transitions worked, search focus suppressed movement, and Tab closed the interface from the search field. Later gesture phases did not complete, so those three observations stayed separate from a full input-suite pass.",
+      "Connection-failure handling was improved too: an occupied requested port should report failure rather than silently select another one. The newest source fix was initially newer than the package, and the records explicitly kept that distinction. A runnable package is useful; it is not automatically the latest validated build."
+    ],
+    "highlights": [
+      "Standalone development build produced",
+      "Nine widget interaction checks passed",
+      "Three real-input behaviors observed",
+      "Clearer session failure reporting"
+    ],
+    "limitations": [
+      "Remaining focus and gesture checks were incomplete",
+      "Historical package does not contain later controller work",
+      "No packaged dedicated-server qualification"
+    ],
+    "image": {
+      "src": "/assets/foothold.webp",
+      "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+      "caption": "A first foothold and a place to return to.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-21-rendering-experiments",
+    "date": "2026-09-21",
+    "order": 5,
+    "title": "Faster in Unreal did not mean finished",
+    "summary": "The world rendered faster in the recorded Unreal tests, but dense forest still missed the target and two instancing experiments were rejected.",
+    "category": "Engineering",
+    "verificationStatus": "Historical measured results; rejected candidates retained",
+    "paragraphs": [
+      "Unreal brought a significant improvement in the sampled world views, but the forest and river remained the hard cases. The final packaged forest sample averaged about 105 FPS at 1600×900 on an RTX 2070 SUPER. That is a recorded view on a specific machine, not a promise about the whole game or a 144 FPS minimum.",
+      "Profiling identified substantial shadow, base-pass and render-visibility work. Switching the whole scene to a GPU-driven instancing candidate made the forest slower, and a spatially divided version also lost to the reference. Both candidates were rejected. Keeping the faster reference mattered more than adopting a technique because its name sounded newer.",
+      "Material correctness continued alongside performance: source normal reconstruction, vegetation masks and startup sky lighting were repaired. The work ended at a preserved checkpoint with the frame-rate gap still open. The current flat controller map must not be used to imply that the old forest problem has been solved."
+    ],
+    "highlights": [
+      "Actual packaged forest measurement recorded",
+      "Rendering costs profiled",
+      "Two slower instancing candidates rejected",
+      "Material and lighting correctness retained"
+    ],
+    "limitations": [
+      "144 FPS target remained unmet",
+      "No player-capacity or server-load result",
+      "No completed forward-renderer comparison"
+    ],
+    "image": {
+      "src": "/assets/beyond.webp",
+      "alt": "A distant planetary landscape",
+      "caption": "Exploring unfamiliar worlds.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-30-editor-workflow",
+    "date": "2026-09-30",
+    "order": 1,
+    "title": "Making the editor a repeatable workbench",
+    "summary": "VibeUE integration, explicit project launching and preserved evidence made editor work easier to repeat and inspect.",
+    "category": "Project Notes",
+    "verificationStatus": "Tooling installed and connection verified",
+    "paragraphs": [
+      "Development resumed with the editor workflow itself. VibeUE was installed and verified, giving the project a consistent route for scripted Unreal inspection, repeatable play sessions and real game captures. Project configuration enabled the editor connection automatically after a restart.",
+      "A recurring recent-project launch problem was traced to project discovery, and explicit project launching recovered the valid build. The workflow now checks the loaded map and build identity before making changes. This is unglamorous work, but it prevents a good test from being attributed to the wrong binary or a world edit from landing in the wrong level.",
+      "The same discipline shaped later work: preserve failed runs, record what a check actually covers, and look at the captured game view instead of trusting its filename. Tools are useful when they make the result more inspectable."
+    ],
+    "highlights": [
+      "Editor automation integrated",
+      "Project connection starts automatically",
+      "Reliable explicit project launching",
+      "Build and visual evidence kept together"
+    ],
+    "limitations": [
+      "Editor tooling is not a shipping gameplay feature",
+      "Tool connection alone does not establish game readiness"
+    ],
+    "image": {
+      "src": "/assets/foothold.webp",
+      "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+      "caption": "A first foothold and a place to return to.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-30-server-plan",
+    "date": "2026-09-30",
+    "order": 2,
+    "title": "Writing down what the server must become",
+    "summary": "The architecture review separated the working prototype from the requirements for responsive, persistent full-loot PvP.",
+    "category": "Project Notes",
+    "verificationStatus": "Documented design; future gates remain open",
+    "paragraphs": [
+      "The server review established a clear direction: one authoritative Unreal world, responsive local controls, private inventory views and deliberate ownership rules. It also separated things that had actually worked in two-player tests from things the game would need before public persistent play.",
+      "The development order became explicit: qualify the controller and dedicated-server path, build one complete disposable combat loop, then add identity and persistence before making measured capacity or production claims. Combat responsiveness remains central; the design avoids making every shot wait for a disk write while still requiring coherent economic recovery later.",
+      "This was architecture work, not a new backend deployment. Authentication, storage, large-world replication, recovery and player capacity remained future gates. The plan also left broad world features open instead of treating every feature from a reference game as a commitment."
+    ],
+    "highlights": [
+      "Implemented behavior separated from requirements",
+      "Responsive PvP made explicit",
+      "Staged development gates recorded",
+      "No unmeasured population promise"
+    ],
+    "limitations": [
+      "Documentation, not implementation of persistence or production hosting",
+      "Historical test receipts were not automatically rerun"
+    ],
+    "image": {
+      "src": "/assets/foothold.webp",
+      "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+      "caption": "A first foothold and a place to return to.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-30-physical-controller",
+    "date": "2026-09-30",
+    "order": 3,
+    "title": "A physical controller and a steady view",
+    "summary": "Native movement brought walking, sprinting, crouching and jumping together with a camera independent of animation.",
+    "category": "Gameplay",
+    "verificationStatus": "Scoped controller and camera tests passed",
+    "paragraphs": [
+      "The new controller used Unreal's physical character movement for walking, falling, jumping and crouching. Sprint intent traveled through the movement prediction path. A stable camera followed the capsule and player input, while animated head motion stayed cosmetic. The chosen feel keeps locomotion headbob off and allows independent Alt free-look.",
+      "The first two-client checks found a surprisingly large problem: the sky mesh had blocking collision and was pushing the physical player out of the test area. Correcting that collision and adding a second spawn made grounded movement testable. A corrected controller run passed 27 assertions, and a later camera-focused run passed 38 while showing that animated head movement did not move the view.",
+      "These were two clients and a dedicated server inside one editor process. The early character geometry was temporary, and its owner look-down framing still needed work. Physical movement and a stable view were real progress, but neither result completed the independent-client or packaged-server gate."
+    ],
+    "highlights": [
+      "Native walk, sprint, jump and crouch",
+      "Camera independent of animated bones",
+      "Sky collision corrected",
+      "27 controller and 38 camera checks in separate runs"
+    ],
+    "limitations": [
+      "Separate historical scenarios on their recorded builds",
+      "Single-process dedicated editor testing",
+      "Initial character presentation was temporary"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-30-character-study",
+    "date": "2026-09-30",
+    "order": 4,
+    "title": "Studying bodies, viewmodels and weapon motion",
+    "summary": "Local character and service-pistol research examined separate rigs, source transforms and the gap between preserved animation data and a runtime match.",
+    "category": "Art & Animation",
+    "verificationStatus": "Local study and numerical audits; limited visual scope",
+    "paragraphs": [
+      "A local Rust reference study examined how the full body, head and dedicated first-person arms differ. The useful result was a clearer separation between world presentation and the player's viewmodel. A clothed arm rig could not simply be treated as the bare character, and unused leg bones did not prove that a viewmodel actually contained leg geometry.",
+      "The study preserved mesh binding and source transforms through export, prepared readable Blender previews and recovered a small unarmed set plus a larger indexed first-person animation library. A numerical audit checked timing and rotation structure across the accepted library. Playback tools were corrected so changing an action also changed the preview range; otherwise a long reload could appear to loop only its first frames.",
+      "The supplied service-pistol model was fitted to a local M92 animation study. The work needed more than a static grip: the reference weapon has independently animated parts and its own hierarchy. Retaining only a generic prop attachment would lose part of that motion.",
+      "The study recovered the weapon hierarchy, calibrated replacement parts against the assembled idle and preserved defaults for parts that a particular clip does not animate. Attack selection and the difference between ordinary idle and aimed idle were checked. The viewer also received reliable clip ranges so the full reload could be inspected.",
+      "These are third-party Rust assets used for private research and prototype work. They are not original project art, not a public asset release, and not proof of exact native playback. Structural checks and a few inspected clips cannot certify an entire animation library.",
+      "This was a compatibility and presentation study using third-party animation references. It did not add a firing controller, ammunition, damage or reload rules to the game. The later runtime import deliberately admitted only the idle that passed its fit checks."
+    ],
+    "highlights": [
+      "Body and first-person rig roles clarified",
+      "Source bind transforms preserved",
+      "16-clip unarmed study and indexed FPS library",
+      "Independent weapon-part motion retained",
+      "Pistol replacement fit calibrated",
+      "Playback ranges corrected for action switching"
+    ],
+    "limitations": [
+      "Third-party study assets are not distributable website content",
+      "No native Unity comparison for all recovered clips",
+      "Numerical library audit is not complete visual acceptance",
+      "Offline pistol study did not implement firing, reload or damage"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    },
+    "media": [
+      {
+        "src": "/assets/foothold.webp",
+        "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+        "caption": "A first foothold and a place to return to.",
+        "kind": "concept",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-09-30-replacing-placeholder",
+    "date": "2026-09-30",
+    "order": 5,
+    "title": "Replacing the placeholder character",
+    "summary": "The local prototype moved to the selected reference character, with separate first-person arms, synchronized body presentation and repaired materials.",
+    "category": "Art & Animation",
+    "verificationStatus": "Historical numeric pass; visual acceptance later withdrawn",
+    "paragraphs": [
+      "The temporary Survival Character presentation first received shared owner geometry, synchronized movement and wearable visibility rules. It also exposed a real input issue: mouse sensitivity was being scaled twice. Removing the inherited multiplier restored the intended setting, and the new checks exercised the actual input path rather than calling the look function directly.",
+      "The chosen Rust reference body and head then replaced that placeholder in the private prototype, with a separate first-person arm rig and original idle study. Material setup and wrist handling were corrected, and confirmed inventory state controlled whether the arms and held item appeared. A 76-assertion run verified its sampled camera, rig and equipment invariants.",
+      "The visual result was subsequently rejected. Crouch and locomotion still produced unacceptable anatomy, and body turning was incomplete. The numeric pass remains useful evidence of its narrow checks, but it does not turn that rejected presentation into a success. The third-party geometry remains reference material, not an original-art claim."
+    ],
+    "highlights": [
+      "Duplicate mouse sensitivity scaling removed",
+      "Owner and observer presentation synchronized",
+      "Separate first-person rig integrated",
+      "Material and wrist checks added"
+    ],
+    "limitations": [
+      "Survival and initial procedural Rust visuals were rejected",
+      "76 assertions did not establish acceptable gait",
+      "No third-party model distribution"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-30-anatomy-rejection",
+    "date": "2026-09-30",
+    "order": 6,
+    "title": "Two hundred checks can still miss the point",
+    "summary": "The anatomy pass improved measured invariants and equipment behavior, but the movement was still rejected in visual review.",
+    "category": "Art & Animation",
+    "verificationStatus": "Numeric checks passed; visual result rejected",
+    "paragraphs": [
+      "The next correction tackled crouch space, leg lanes, limb lengths, stance and cosmetic head/body turning. It also made the starting state unequipped: selecting a belt slot raised its item, and selecting it again lowered it. Free-look was separated from ordinary aim, including a correction for an offset being applied twice.",
+      "The resulting run passed 200 sampled assertions across movement, camera, look and equipment states. Those tests had value, but visual review still rejected the result. Procedural gait and owner torso adjustments could satisfy numeric bounds while producing an unconvincing body in motion.",
+      "That rejection changed the next step. More assertions were not a substitute for better motion and direct visual review. The failed appearance and its passing numerical record were both preserved, and the project moved toward authored locomotion and a cleaner first-person lower-body solution."
+    ],
+    "highlights": [
+      "Anatomy and leg-length measurements expanded",
+      "Default unequipped state and same-slot toggle",
+      "Free-look double counting corrected",
+      "Rejected visual result kept in the record"
+    ],
+    "limitations": [
+      "200/200 was a scoped numerical result, not visual acceptance",
+      "Procedural presentation superseded on 1 October"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-30-body-recovery-rejected",
+    "date": "2026-09-30",
+    "order": 7,
+    "title": "A body-animation recovery that did not make the cut",
+    "summary": "A 44-clip offline reconstruction preserved data but failed the appearance test and was excluded from gameplay.",
+    "category": "Art & Animation",
+    "verificationStatus": "Rejected offline experiment",
+    "paragraphs": [
+      "A separate experiment tried to reconstruct full-body reference animation from Humanoid data without native engine evaluation. It produced an offline 44-clip library covering locomotion, crouching, swimming, jumping and turning, with synchronized body and head action slots in the viewer.",
+      "Package and playback checks confirmed that the exported data was present and repeatable. They did not recreate the original engine's complete animation behavior. Missing runtime solving, layering and other evaluation details mattered: the preview was reported as broken, including head/body separation, and its earlier usability claim was withdrawn.",
+      "The result was kept as research and explicitly excluded from gameplay. A failed experiment can still identify the next real test, but its file count is not a feature count. The later locomotion replacement used a different, authored retargeting route."
+    ],
+    "highlights": [
+      "44-clip offline experiment documented",
+      "Body and head action-slot handling investigated",
+      "Structural checks separated from appearance",
+      "Rejected candidate excluded from runtime"
+    ],
+    "limitations": [
+      "No verified native Unity parity",
+      "No accepted gameplay import",
+      "Third-party research assets remain private"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-authored-locomotion",
+    "date": "2026-10-01",
+    "order": 1,
+    "title": "Replacing generated gait with authored motion",
+    "summary": "Eighteen authored clips replaced procedural leg movement, with shared stride timing, smoother reversals and a better jump transition.",
+    "category": "Art & Animation",
+    "verificationStatus": "Scoped authored-motion checks passed",
+    "paragraphs": [
+      "The rejected generated gait was replaced with 18 Epic-authored sequences retargeted to the private prototype's existing reference skeleton. The set covers idle, directional walking, running, crouching and airborne states. The first-person body and observer body share the same motion snapshot and gait clock instead of advancing independently.",
+      "The runtime follows all 33 recorded stride cycles across the moving clips, blends direction changes continuously and eases the jump apex into falling. A one-time crouch-height correction preserved the measured foot positions across 202 keyed frames rather than adding a runtime leg solver. The camera remains independent throughout.",
+      "The first full-motion run passed 106 assertions on its recorded build. Later tests and the final owner-body run have their own identities. None of these results claims original Rust locomotion parity or perfect foot contact in every rendered condition; continuous motion review remains its own job."
+    ],
+    "highlights": [
+      "18 authored locomotion clips",
+      "Shared owner and observer gait clock",
+      "All 33 stride cycles retained",
+      "Continuous reversal and jump-apex blending"
+    ],
+    "limitations": [
+      "Epic-authored source animation on a third-party reference rig",
+      "Numeric motion evidence does not prove every visual condition",
+      "Historical test identities kept separate"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-owner-body",
+    "date": "2026-10-01",
+    "order": 2,
+    "title": "Looking down without folding the character",
+    "summary": "A dedicated lower-body derivative replaced rejected torso-folding experiments while preserving the shared authored leg pose.",
+    "category": "Art & Animation",
+    "verificationStatus": "Bounded still review and 79-assertion motion pass",
+    "paragraphs": [
+      "First-person look-down framing had become the stubborn problem. Folding the upper torso or moving the pelvis inside the pose produced an intrusive abdomen or warped silhouette. Those candidates were rejected, including attempts that looked numerically safe.",
+      "The accepted bounded solution uses the reference character's original legs and feet with a small weighted waist closure. The whole cosmetic component moves together for framing, while the authored pose, observer body, camera and collision remain independent. Four real game stills covered standing, crouched, crouch-walking and running views.",
+      "A corrected full-motion scenario then completed all 79 assertions. Earlier failures remain failures: one lacked transition coverage, and another expected intermediate observer velocity values that the engine does not promise. Correcting the test and executing the full suite supplied new evidence; it did not retroactively pass the old runs. Wrong-viewport image exports were also rejected instead of being presented as motion footage."
+    ],
+    "highlights": [
+      "Rejected torso-folding experiments removed",
+      "Original leg geometry and bind retained",
+      "Closed waist and whole-component framing",
+      "79/79 corrected full-motion assertions"
+    ],
+    "limitations": [
+      "Four reviewed stills are not continuous footage",
+      "Full foot-contact and temporal appearance qualification remains open",
+      "Third-party-derived mesh is not website download material"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-sprint-replay",
+    "date": "2026-10-01",
+    "order": 3,
+    "title": "A sprint correction should remember the original move",
+    "summary": "Forward-only sprint now retains the move's original direction decision when prediction is replayed after a correction.",
+    "category": "Engineering",
+    "verificationStatus": "Bounded direction and correction tests passed",
+    "paragraphs": [
+      "Sprint was narrowed to meaningful forward input rather than diagonal, lateral or backward travel. That exposed a subtle correction problem: when the client replays an old saved move, the character may already be facing a new direction. Rechecking the old acceleration against today's facing can incorrectly reinterpret a forward sprint as a strafe.",
+      "The movement path now preserves the original move's direction decision for replay. Ordinary prediction and the server still use the normal eligibility rule. The correction test forced an actual position discrepancy under configured client delay, observed the replay path and confirmed recovery. A separate 17-case direction suite passed too.",
+      "These checks add useful confidence to a specific movement edge case. They are not a broad adverse-network certification, and the configured delay should not be advertised as a measured round-trip time."
+    ],
+    "highlights": [
+      "Forward-only sprint intent",
+      "Saved move retains its direction decision",
+      "Actual correction replay exercised",
+      "Separate directional cases verified"
+    ],
+    "limitations": [
+      "23 correction and 21 direction assertions belong to their recorded historical build",
+      "One bounded delay case, not general impairment qualification"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-turning",
+    "date": "2026-10-01",
+    "order": 4,
+    "title": "Removing the stop-start chatter from turning",
+    "summary": "Stationary body rotation now follows a continuous mouse sweep and settles when the input actually becomes quiet.",
+    "category": "Gameplay",
+    "verificationStatus": "Six-sweep owner and observer checks passed",
+    "paragraphs": [
+      "The first stationary-turn rule had an obvious rhythm: wait, catch up, stop, then repeat during the same continuous look. The revised behavior keeps a turn active across continuing input and gaps between observer updates. Angular speed eases instead of snapping between active and idle.",
+      "Fast sweeps also need enough follow speed to avoid falling so far behind that the shortest rotation reverses at the angle wrap. The new response adapts to that input while preserving the small initial look allowance. The player camera and physical capsule do not inherit the cosmetic turning motion.",
+      "Six sweeps covering both directions, reversal, fast turning and crouch produced 1,434 sampled frames and passed 15 assertions. Each sweep had one start and one settle in the tested conditions. Continuous visual review and wider observer-network conditions remain separate from this scoped result."
+    ],
+    "highlights": [
+      "Continuous turning through sustained look",
+      "Smoother angular-speed response",
+      "Fast-wrap reversal avoided",
+      "Owner and observer sampled together"
+    ],
+    "limitations": [
+      "Single-process dedicated editor test",
+      "No complete impaired-network animation qualification"
+    ],
+    "image": {
+      "src": "/assets/character-movement.webp",
+      "alt": "A survivor running along a wooded mountain trail",
+      "caption": "Movement through the frontier.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-service-pistol",
+    "date": "2026-10-01",
+    "order": 5,
+    "title": "One pistol, a cleaner starting point",
+    "summary": "The active placeholder catalog was retired in favor of a single service pistol with verified idle presentation and a calibrated observer grip.",
+    "category": "Gameplay",
+    "verificationStatus": "Idle presentation verified; full clip export rejected",
+    "paragraphs": [
+      "The active content baseline was reduced to one service pistol. Old placeholder identities were retired instead of recycled, and development sessions began with the pistol stored but unequipped. This keeps the next gameplay work focused on one complete weapon path rather than a large catalog of unfinished stand-ins.",
+      "The first-person presentation combines the reference arms and weapon hierarchy into a single skinned mesh playing the validated idle animation. The world grip needed anatomical calibration because the first-person and body rigs use different wrist and finger bases. Copying rotations directly had inverted the grip; the corrected mapping preserved bone lengths and aligned the observer weapon without a duplicate owner gun.",
+      "A fresh editor build passed 24 pistol assertions; separate standalone tests passed 86 catalog and rule checks, with a bounded review of real first-person and observer stills. The full animation export still failed a reload-part fit check and was excluded. At this verified checkpoint, holding the pistol is implemented; firing, reload logic, recoil and damage are not a completed combat feature."
+    ],
+    "highlights": [
+      "Single active weapon baseline",
+      "Stable retired item identities",
+      "Combined first-person idle and calibrated world grip",
+      "Failed full-animation candidate excluded"
+    ],
+    "limitations": [
+      "Verified idle presentation only",
+      "Third-party animation study is not original shipping art",
+      "No completed firing, ammunition or damage loop at this checkpoint"
+    ],
+    "followup": {
+      "text": "Later on 1 October, the weapon foundation added firing, ammunition, reload and server-resolved bullets. That prototype is covered in the next update, with qualification still incomplete.",
+      "slug": "2026-10-01-weapon-foundation"
+    },
+    "image": {
+      "src": "/assets/weapon-workbench.webp",
+      "alt": "Original service pistol and magazine on a workbench",
+      "caption": "Tools of survival.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-authority-foundation",
+    "date": "2026-10-01",
+    "order": 6,
+    "title": "Keeping command work bounded and inventory private",
+    "summary": "The multiplayer foundation now rejects excess work predictably and updates affected private views instead of rebuilding everyone's state for an ordinary action.",
+    "category": "Engineering",
+    "verificationStatus": "Build, deterministic checks and scoped multiplayer pass",
+    "paragraphs": [
+      "Before extending combat, the command path received a focused foundation pass. Incoming gameplay work is bounded, invalid requests preserve state, and rejected ordinary commands can recover through the normal queue. Requests also need a valid gameplay owner. These are practical prototype safeguards, not a claim of production security.",
+      "Private inventory publication became more selective. An action marks the affected owner, changes are grouped before publication, and unchanged views retain their revision. Cached object projections reduce repeated work. The goal is straightforward: one player's private action should not cause unrelated inventories to rebuild or receive artificial changes.",
+      "The checkpoint retained 1,310 deterministic checks and passed a corrected 35-assertion dedicated editor scenario after two earlier test-harness failures. The correction made the probe deliver real client requests before judging the result. Conservation, ordinary-command recovery and owner isolation passed; shared-container integration, independent clients, broader network conditions and capacity remain open."
+    ],
+    "highlights": [
+      "Predictable admission and rejection",
+      "Inventory conservation through rejected actions",
+      "Affected-owner publication",
+      "1,310 deterministic checks and 35 runtime assertions"
+    ],
+    "limitations": [
+      "Two clients and server shared one editor process",
+      "No production security or capacity claim",
+      "Shared-container adapter still needs runtime qualification"
+    ],
+    "image": {
+      "src": "/assets/foothold.webp",
+      "alt": "Two survivors beside a stone shelter and campfire in the mountains",
+      "caption": "A first foothold and a place to return to.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-next-combat-slice",
+    "date": "2026-10-01",
+    "order": 7,
+    "title": "Designing the next reusable weapon foundation",
+    "summary": "The project checkpoint now separates completed presentation from the shared item-instance and combat behavior being designed next.",
+    "category": "Project Notes",
+    "verificationStatus": "Design direction; implementation work not claimed complete",
+    "paragraphs": [
+      "The repository was cleaned into an Unreal-focused baseline while preserving useful source assets and historical evidence. The project summary was rewritten around what can actually be played: networked movement, inventory/equip and pistol holding presentation. Old world, catalog and packaging successes remain in the history with their original limits.",
+      "The next weapon should be reusable. Shared definitions describe a weapon, while an individual item retains its own state when moved or equipped. That avoids a magazine that belongs to a slot or magically resets when the player raises the gun. The intended player-facing combat direction includes meaningful travel, hit locations and a deliberate policy for latency, with exact behavior still requiring design and validation.",
+      "This is the direction beyond the last verified checkpoint, not a finished combat announcement. The complete death, loot and respawn loop, persistent accounts, production hosting and measured capacity remain later milestones. The journal will record those as completed only when their own evidence exists."
+    ],
+    "highlights": [
+      "Unreal-focused project baseline",
+      "Historical source and failed evidence preserved",
+      "Shared definitions separated from individual weapon state",
+      "Next gameplay milestone stated explicitly"
+    ],
+    "limitations": [
+      "Design review is not a build or gameplay pass",
+      "This entry describes design direction; completed weapon gameplay is not claimed",
+      "No release date or capacity promise"
+    ],
+    "followup": {
+      "text": "The proposed foundation was subsequently implemented and built. The following posts cover that work and its remaining qualification gaps.",
+      "slug": "2026-10-01-weapon-foundation"
+    },
+    "image": {
+      "src": "/assets/weapon-workbench.webp",
+      "alt": "Original service pistol and magazine on a workbench",
+      "caption": "Tools of survival.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-10-01-weapon-foundation",
+    "date": "2026-10-01",
+    "order": 8,
+    "title": "The pistol becomes a combat prototype",
+    "summary": "The reusable weapon foundation now connects individual magazines, reserve ammunition, reloading and aiming to server-resolved bullet flight and damage.",
+    "category": "Gameplay",
+    "verificationStatus": "Implemented and built; qualification incomplete",
+    "paragraphs": [
+      "The service pistol has moved beyond holding presentation. A shared weapon definition now supplies its behavior, while each individual weapon keeps its loaded ammunition and firing state when moved through the inventory. Raising the gun does not refill it. Reloading transfers compatible reserve ammunition when the action completes, and interruption preserves the rounds already loaded.",
+      "Firing has its own network path so it does not wait behind ordinary inventory actions. The player gets immediate local feedback, then reconciles with the server's result. The server decides whether the action is valid, spends ammunition and advances a finite-speed bullet under gravity. Head, torso and limb queries determine damage, with current cover taking priority. A hit marker requires confirmed damage rather than the local firing effect alone.",
+      "Aiming, a procedural shot kick, flash, development audio and a reload-lowering cue surround the validated idle. The earlier rejected animation export remains excluded. These effects let the prototype communicate its actions while authored firing and reload presentation still need their own validation.",
+      "The successful editor build and recorded tests establish implemented prototype behavior, but the weapon milestone is not complete. The main regression suite still has unexecuted checks, and firing and reload need normal-speed visual review. Zero health currently stops further actions; it does not create the death, corpse, loot and respawn loop.",
+      "The recoil direction has also been clarified: each weapon should have a fixed, repeatable pattern that players can learn. In the build covered here, upward and alternating sideways impulses provided temporary feedback. Authored patterns and their runtime validation were the next step, separate from the existing accuracy spread."
+    ],
+    "highlights": [
+      "Ammunition belongs to individual weapon instances",
+      "Reloads use actual inventory reserve ammunition",
+      "Firing is independent of the inventory queue",
+      "Server-resolved bullet travel, gravity and anatomical damage",
+      "Immediate feedback reconciles with authoritative results"
+    ],
+    "limitations": [
+      "Weapon core and temporal visual qualification remain incomplete",
+      "Fixed learnable recoil patterns were still a requirement at this build checkpoint",
+      "Only the validated idle animation is integrated",
+      "No completed death, loot, respawn or persistent combat loop"
+    ],
+    "image": {
+      "src": "/assets/weapon-workbench.webp",
+      "alt": "Original service pistol and magazine on a workbench",
+      "caption": "Tools of survival.",
+      "kind": "concept"
+    },
+    "media": [
+      {
+        "src": "/assets/character-movement.webp",
+        "alt": "A survivor running along a wooded mountain trail",
+        "caption": "Movement through the frontier.",
+        "kind": "concept",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-01-shots-in-transit",
+    "date": "2026-10-01",
+    "order": 9,
+    "title": "Testing the shot while everything keeps moving",
+    "summary": "Delay, moving targets and a distant cover test supplied useful weapon evidence—and exposed test assumptions that could not be counted as passes.",
+    "category": "Engineering",
+    "verificationStatus": "Scoped passes; core suite remains incomplete",
+    "paragraphs": [
+      "A local shot should feel immediate even though the server receives it later. The weapon path now measures the client/server time relationship and evaluates a bounded history of player poses. Live characters are not moved backward for the query, and present-day cover still wins. This is a declared prototype policy with limits, not a claim to reconstruct every past moment perfectly.",
+      "The delayed-network scenario passed 24 assertions at roughly 216 ms measured round-trip time. It checked that local prediction preceded server acceptance and that state reconciled afterward. A separate moving-target scenario passed ten assertions at roughly 215 ms while the target moved laterally, recording a server-confirmed torso hit and exactly one round spent. Another eight-assertion test observed a bullet in flight before it hit cover about 60 metres away, without damaging a player.",
+      "The test work also corrected how brief effects were sampled. A requested short wait can return too late to observe a flash or kick, and a large first-frame delta can consume a new effect before it is shown. Creation-frame preservation and bounded frame sampling replaced that assumption. The flight test likewise needed a corrected fixture before its successful run; its first setup failure remains in the record.",
+      "The main core suite remains failed, even though its second attempt passed 78 checks before stopping. It incorrectly required every attempted unreliable request to arrive. The right follow-up must distinguish attempted sends, actual receipts and accepted gameplay costs. Later core checks did not execute, so neither the narrower passes nor the 2,683 deterministic rule and geometry checks can stand in for a completed run.",
+      "Recorded hip, aimed and observer holding stills support limited framing review. They do not establish firing rhythm, recoil recovery, muzzle timing, reload quality or accepted audio. All of these network scenarios used two clients and a dedicated server inside one editor process. Broader connection conditions, independent clients, packaged servers and capacity remain future qualification."
+    ],
+    "highlights": [
+      "Measured round-trip time kept separate from configured delay",
+      "24 delay, 10 moving-target and 8 flight assertions passed separately",
+      "2,683 deterministic rule and geometry checks",
+      "Transient feedback tested on actual sampled frames",
+      "Failed runs preserved with their unexecuted scope"
+    ],
+    "limitations": [
+      "The core suite is incomplete after two failed attempts",
+      "Bounded delay cases do not establish general network fairness or capacity",
+      "Moving-target evidence is sampled after a tick, not an exact reconstruction of resolution time",
+      "Still images do not establish normal-speed combat presentation",
+      "History recovery and broader hit-query conditions remain unqualified"
+    ],
+    "image": {
+      "src": "/assets/weapon-workbench.webp",
+      "alt": "Original service pistol and magazine on a workbench",
+      "caption": "Tools of survival.",
+      "kind": "concept"
+    }
+  },
+  {
+    "slug": "2026-09-30-tin-finch-first-ship",
+    "date": "2026-09-30",
+    "order": 8,
+    "title": "Tin Finch: our first original ship",
+    "summary": "A compact salvage skiff takes shape, with a weathered pressure cabin, exposed engines and an interior built around one pilot.",
+    "category": "Art & Animation",
+    "verificationStatus": "Original vehicle asset; native export checks passed",
+    "paragraphs": [
+      "Our first original ship is the Tin Finch TF-01, a single-seat salvage skiff with a patched cabin and its machinery on display. Three rear exhausts, side-mounted tanks, braced landing skids and a narrow boarding step give the small craft its practical character. Its name, geometry, markings and surface artwork were created for this project, with supplied vehicle references informing the utilitarian aesthetic.",
+      "The cabin has a modeled pilot seat, gauges, pedals and controls, while a separate hinged hatch opens to reveal the interior. The asset includes four levels of detail, collision proxies and attachment points. Its editable construction remains available alongside the exported hull and hatch, so later integration can work from the actual model rather than a single concept image.",
+      "The native Blender previews show the finished asset from the front, rear, open hatch and pilot's seat, alongside a wireframe view. Export and reimport checks preserved mesh counts, dimensions, collision proxies and the recorded UV channels. The portable package also passed structural geometry, material and hatch-animation checks.",
+      "This milestone delivers the ship's art and an integration handoff. The renders are Blender previews; flight, boarding interactions and working instruments have not been implemented by this asset package. Bringing Tin Finch into playable form is a separate step."
+    ],
+    "highlights": [
+      "First original ship: the Tin Finch TF-01 salvage skiff",
+      "Modeled single-seat cockpit and separate animated hatch",
+      "Exposed engines, tanks and braced landing skids",
+      "Four levels of detail with preserved editable source",
+      "Native export and portable asset checks recorded"
+    ],
+    "limitations": [
+      "Blender asset renders, not gameplay screenshots",
+      "Unreal import helper was syntax-checked but not executed",
+      "Flight, boarding and live instruments remain integration work",
+      "Asset checks do not establish runtime physics or frame-rate performance"
+    ],
+    "image": {
+      "src": "/assets/tin-finch-engine.webp",
+      "alt": "Tin Finch spacecraft with salvaged cabin and exposed engines",
+      "caption": "Tin Finch exterior · original asset render.",
+      "kind": "render"
+    },
+    "media": [
+      {
+        "src": "/assets/tin-finch-cockpit.webp",
+        "alt": "Tin Finch cockpit with analog gauges, pedals and joystick",
+        "caption": "Inside the Tin Finch · original asset render.",
+        "kind": "render",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-02-spherical-terrain-experiments",
+    "date": "2026-10-02",
+    "order": 1,
+    "title": "Learning what a small spherical world needs",
+    "summary": "An isolated Unreal terrain experiment connected six curved terrain faces, collision checks and a first woodland scene, while exposing the gap between correct geometry and a convincing world.",
+    "category": "Worldbuilding",
+    "verificationStatus": "Historical Unreal experiment: bounded collision checks passed",
+    "paragraphs": [
+      "Before the current Godot project, we explored small spherical worlds in an isolated Unreal prototype. The first useful step was a six-section sphere with consistent surface boundaries. An early collision failure turned out to be a triangle-facing problem: the surface could be hit from inside the planet but not reliably from outside. Correcting the triangle order gave us a working control to build on.",
+      "That control grew into shaped terrain, ground materials, atmosphere and a woodland scene. The first shaped version contained six terrain faces and 710 decorative woodland actors. Sampled rays and swept shapes checked the actual loaded terrain across faces, seams and corners, with 540 checks passing in the editor and another 540 in a running test session.",
+      "The work also made the asset pipeline more repeatable. Existing source archives were inventoried and extracted with integrity checks, while a separate native terrain experiment was preserved after two unsuccessful builds. Keeping the working terrain and the unresolved experiment separate let the visual study continue without treating an unproven engine feature as a finished foundation.",
+      "The next visual revision was rejected on 3 October because the geography did not meet the project's quality goal. More detail and vegetation could not solve that by themselves. These results belong to an early Unreal study: the collision samples did not prove physical walking around a planet, streaming, packaged performance or a finished environment, and they are not validation of today's Godot worlds."
+    ],
+    "highlights": [
+      "Corrected the sphere's outward collision orientation",
+      "Built and sampled six shaped terrain faces",
+      "Added an initial woodland and atmosphere study",
+      "Preserved failed experiments and visual feedback alongside the passes"
+    ],
+    "limitations": [
+      "Historical Unreal prototype, separate from the current Godot implementation",
+      "The later visual revision was rejected",
+      "Collision sampling did not qualify radial walking, streaming or a complete planet"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/unreal-spherical-terrain.png",
+      "alt": "The six-face spherical terrain experiment in the Unreal inspection viewer",
+      "caption": "The actual 2 October spherical-terrain experiment · historical Unreal capture.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/unreal-woodland.png",
+        "alt": "First woodland scene from the spherical-world experiment",
+        "caption": "The 2 October woodland experiment at ground level · historical Unreal capture.",
+        "kind": "capture",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-03-survival-that-remembers",
+    "date": "2026-10-03",
+    "order": 1,
+    "title": "A survival loop that remembers what happened",
+    "summary": "The Unreal prototype connected paid crafting, deployables, death, corpse looting, respawn and reconnect to persistent server-owned state.",
+    "category": "Gameplay",
+    "verificationStatus": "Historical Unreal prototype: scoped gameplay and recovery checks passed",
+    "paragraphs": [
+      "The 3 October survival milestone connected actions that had previously been separate experiments. In the historical Unreal prototype, crafting consumed ingredients, sleeping bags and cupboards used server-checked placement, death transferred belongings into loot, and respawn created a new life. The server kept ownership of those changes so an old request could not repeat a purchase or claim the same belongings twice.",
+      "A dedicated test map put two clients through crafting, placement, cupboard permissions, corpse looting and bag or beach respawn. All 74 checks in that scenario passed. The test deliberately used supplied resources and shortened bag timing, so it demonstrated the connected rules without claiming a complete gathering loop or normal-world balance.",
+      "Disconnecting also became part of the world. A player left behind a vulnerable sleeping body, and reconnecting reclaimed that body's identity and saved state. A later focused check verified the sleeping overlay and an explicit key press to wake. Separate orderly restart comparisons checked that inventory, life, health, bag identities and sampled world entities survived reopening the same save.",
+      "There were still real limits. A cold startup exceeded the persistence completion deadline before a warm retry succeeded; forced game-process crashes, broad coastal play, production accounts and population scale were not qualified. Some survival visuals were placeholders. This is a record of the earlier Unreal milestone, not a claim that its code or every test result carries over to the current Godot game."
+    ],
+    "highlights": [
+      "Connected crafting, deployables, death, loot and respawn",
+      "Passed a 74-check two-client survival scenario",
+      "Kept sleeping bodies vulnerable across disconnects",
+      "Verified explicit wake input and scoped orderly save recovery"
+    ],
+    "limitations": [
+      "Historical Unreal prototype, superseded by the current Godot project",
+      "Fixtures supplied resources and shortened respawn cooldowns",
+      "Cold-start reliability, forced crashes and production capacity were not established"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/survival-results.svg",
+      "alt": "Recorded survival and reconnect results",
+      "caption": "Visual summary of the recorded repository results for this milestone; not a gameplay screenshot.",
+      "kind": "report"
+    }
+  },
+  {
+    "slug": "2026-10-04-building-and-damage",
+    "date": "2026-10-04",
+    "order": 1,
+    "title": "Building a base, then making its damage consistent",
+    "summary": "Snapped construction, grades, cupboard access, doors and locks became a connected Unreal prototype, followed by shared firearm and explosive damage rules.",
+    "category": "Gameplay",
+    "verificationStatus": "Historical Unreal prototype: builds passed; gameplay acceptance remained partial",
+    "paragraphs": [
+      "Base building became a substantial playable slice in the earlier Unreal project. A building plan placed modular pieces, a hammer repaired and upgraded them, and cupboard permissions controlled construction. The prototype covered twenty structural parts and five grades, with doors and code locks treated as separate inventory-backed objects rather than properties hidden inside a wall.",
+      "The separation mattered when things changed. An open, unlocked door could be removed under its own rules; locks had their own authorization and removal conditions; destroying a support had to remove dependent pieces consistently. Focused play checks covered cupboard storage and permissions, a stone upgrade, repair feedback, direct explosive damage and save recovery. Later manual play exposed additional problems in half-wall contacts, stairs, ceiling selection and movement while the build wheel was open, which led to another correction pass.",
+      "Damage then gained a common calculation and receiver boundary. Firearms and timed explosives could share editable attack and defense definitions while characters, structures and doors retained their own consequences. A two-client check observed bullets damaging twig and wood, leaving stronger structural grades unchanged, and damaging a wooden door independently of its frame. A duplicate fire request did not create a second ammunition cost or hit.",
+      "Successful builds and thousands of rule checks did not make the whole slice finished. The damage scenario stopped at an interaction outside its allowed reach, later corrections still needed manual acceptance, and upkeep, decay, area explosions and a broader arsenal were outside this milestone. These were historical Unreal systems; the current Godot ground game has its own implementation and validation history."
+    ],
+    "highlights": [
+      "Connected snapped building, repair, upgrades and cupboard permissions",
+      "Separated structures, doors and code locks",
+      "Checked direct explosive damage and scoped save recovery",
+      "Introduced shared, editable firearm and explosive damage definitions"
+    ],
+    "limitations": [
+      "Historical Unreal prototype, not a current Godot feature checklist",
+      "Later building and damage changes retained manual acceptance work",
+      "Upkeep, decay and area explosions were not delivered in this slice"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/building-results.svg",
+      "alt": "Recorded building UI test results and remaining validation",
+      "caption": "Visual summary of the recorded repository results for this milestone; not a gameplay screenshot.",
+      "kind": "report"
+    }
+  },
+  {
+    "slug": "2026-10-04-private-playtest-package",
+    "date": "2026-10-04",
+    "order": 2,
+    "title": "A private playtest package, and an honest startup limit",
+    "summary": "The Unreal prototype was packaged for a host and a friend, with separate profiles and reconnect identities; a memory failure kept the full two-computer playtest unverified.",
+    "category": "Engineering",
+    "verificationStatus": "Historical Unreal package built; end-to-end private playtest not verified",
+    "paragraphs": [
+      "The next practical goal was simple: let two people try the historical Unreal prototype without opening the editor. We built a standalone package and reusable launchers so one computer could host a headless game process while both players joined as clients. Persistent player and server profiles lived outside the replaceable package, allowing an update without bundling or replacing anybody's world save.",
+      "The private development setup created a local reconnect identity and used a private network for access. It was a playtest arrangement, not a public account service. The headless host loaded the intended world with no local player, opened its network endpoint, and completed an observed orderly stop and restart. It used the packaged game executable; it was not a separately compiled dedicated-server target.",
+      "Trying to join exposed two different startup problems. The initial client reached the join stage but spent most of its readiness window loading the world, so the startup logic was adjusted to separate world travel from player admission. A rebuilt and repackaged attempt then exhausted available Windows committed memory while the server and client started together, and both processes exited.",
+      "The launchers were updated to wait for actual world-load completion and refuse a local join while the host was still loading or had failed. Those final safeguards received syntax checks, but there was no successful final runtime retry. Packaging was completed; authenticated spawn, reconnect, packaged save recovery and play across two computers remained open. This entry records an Unreal prototype boundary, not the hosting status of today's Godot project."
+    ],
+    "highlights": [
+      "Built a standalone private playtest package",
+      "Separated persistent server and player profiles from game updates",
+      "Observed headless world load and orderly restart",
+      "Improved startup checks after loading and memory failures"
+    ],
+    "limitations": [
+      "Historical Unreal package; no claim about current Godot hosting",
+      "The final server-and-client attempt failed under memory pressure",
+      "End-to-end admission and external two-computer play remained unverified"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/package-results.svg",
+      "alt": "Recorded package build and failed runtime validation",
+      "caption": "Visual summary of the recorded repository results for this milestone; not a gameplay screenshot.",
+      "kind": "report"
+    }
+  },
+  {
+    "slug": "2026-10-05-original-kits-and-ship-handoff",
+    "date": "2026-10-05",
+    "order": 1,
+    "title": "Giving the prototype its own doors, tools and ship art",
+    "summary": "Original supplied kits replaced survival placeholders and expanded the art library, while resource harvesting and Tin Finch flight stayed explicitly separate from importing their models.",
+    "category": "Art & Animation",
+    "verificationStatus": "Historical Unreal integration: build and asset checks passed; gameplay not tested",
+    "paragraphs": [
+      "The 4–5 October art pass gave several working Unreal prototype systems more suitable visuals. The sleeping bag and tool cupboard received supplied project art. Six single and double door variants gained authored frames and hinged leaves, while the existing gameplay still owned placement, opening, health, condition, permissions and persistence.",
+      "Keeping art separate from rules made this a controlled replacement. Item identities, recipe costs and save formats stayed intact. Door frames joined the placement-clearance checks, and the final source correction ensured their collision could be queried correctly. A successful native build and saved asset readback confirmed the bindings; they did not substitute for testing the doors during play.",
+      "The handoff also staged four resource families with intact, fractured and remnant forms, alongside workbench, tool and other prop art. Tin Finch's hull and hatch were imported with their materials, levels of detail and collision. Its attachment markers did not import correctly, so an attempted assembly was rolled back and the unresolved attachment work remained documented.",
+      "This milestone was about admitting and connecting art in the historical Unreal prototype. It did not enable resource harvesting, new vehicle recipes or a flyable ship, and no gameplay scenarios were run for this integration. Those distinctions matter in the archive: a model visible in an editor is not yet a working game system, and later Godot work needs its own integration and acceptance."
+    ],
+    "highlights": [
+      "Replaced sleeping-bag and cupboard placeholders",
+      "Connected six authored door variants to existing gameplay",
+      "Staged resource stages, tools, workbenches and prop art",
+      "Imported Tin Finch parts and documented the attachment problem"
+    ],
+    "limitations": [
+      "Historical Unreal asset integration, separate from current Godot assets and behavior",
+      "No gameplay or multiplayer acceptance was run for this pass",
+      "Tin Finch remained separate art parts; harvesting and vehicle behavior were deferred"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/original-door-kit.png",
+      "alt": "Three original single-door models imported into the Unreal editor",
+      "caption": "Original supplied door kit in the actual 4–5 October integration pass · editor capture.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/tin-finch-engine.webp",
+        "alt": "Original Tin Finch spacecraft model",
+        "caption": "Original Tin Finch model render; the integration milestone imported its parts, not a flyable ship.",
+        "kind": "render",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-07-world-streaming-and-rebuild",
+    "date": "2026-10-07",
+    "order": 1,
+    "title": "When world population forced a foundation rethink",
+    "summary": "A failed vegetation-heavy Unreal map led to World Partition, runtime vegetation generation and a documented architecture rebuild, with measured progress and clear unfinished work.",
+    "category": "Engineering",
+    "verificationStatus": "Historical Unreal milestone: world conversion and scoped editor play verified",
+    "paragraphs": [
+      "The earlier Unreal project reached a practical limit when a vegetation pass saved roughly 9.9 million instances into a single map. Playing that version exhausted the development machine's memory. We preserved the failed checkpoint and restored the playable map before changing how the world was organized. The problem was recorded as a failed approach, not hidden behind a larger content count.",
+      "The replacement converted a copy of the world to World Partition with three-dimensional cells and grouped distant geometry. Vegetation moved to runtime generation in separate tree, concealment and ground-cover roles. The converted map became the default, and actual editor play showed terrain, vegetation and a previously saved player base together.",
+      "The recorded editor private-memory use dropped from roughly 25 GB to roughly 6 GB while idle. A dedicated-server-and-client editor session still used about 20 GB with vegetation, so this was progress with a substantial remaining cost. These were development-machine observations, not a packaged-game benchmark, player-capacity result or promise that arbitrary world sizes would work.",
+      "An accompanying audit set out a broader Unreal rebuild around engine-supported gameplay components and editable data. Only the world milestone was completed; the new data layer had begun and compiled but was not yet in use. Inventory, combat, persistence and interface migration still lay ahead. That branch is part of the project's history before the current Godot direction, whose architecture and world limits are documented separately."
+    ],
+    "highlights": [
+      "Preserved the failed high-density vegetation checkpoint",
+      "Converted a world copy to three-dimensional World Partition",
+      "Generated vegetation at runtime by habitat role",
+      "Measured lower idle editor memory and documented the unfinished rebuild"
+    ],
+    "limitations": [
+      "Historical Unreal branch, superseded by the current Godot direction",
+      "Editor memory observations were not packaged or population benchmarks",
+      "The broader gameplay and interface rebuild was not completed"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/streaming-results.svg",
+      "alt": "Recorded editor memory observations after the world conversion",
+      "caption": "Visual summary of the recorded repository results for this milestone; not a gameplay screenshot.",
+      "kind": "report"
+    }
+  },
+  {
+    "slug": "2026-10-10-first-hollow-universe-foundations",
+    "date": "2026-10-10",
+    "order": 1,
+    "title": "The first foundations of Hollow Universe",
+    "summary": "The first galaxy and system maps established a deterministic world foundation and an interface built around readable exploration.",
+    "category": "Project Notes",
+    "verificationStatus": "Retrospective: initial generator and maps implemented",
+    "paragraphs": [
+      "This retrospective begins with the first recorded Hollow Universe build on 10 October. A galaxy generator, galaxy map and star-system map made it possible to move from a broad view of space into individual systems. This was the beginning of a new foundation in C# and Godot, with generation and simulation kept separate from the engine that presents them.",
+      "Deterministic generation was central to that foundation. A system's address and seed needed to describe the same place every time, independently of which part of the map happened to be open. Keeping those rules outside the renderer made it possible to examine and test the generated universe without starting the full game.",
+      "The interface received attention immediately. Real-pixel scaling, clearer typography, values beside their labels and collision-aware map labels made information easier to read at different resolutions. The aim was to let the player understand the selected place without losing it beneath panels or overlapping names.",
+      "The original astronomical scale was an early exploration of the idea, not the current playable-world specification. Hollow Universe has since adopted a maximum of 1,000 stars and much smaller planets. The generation and map work described here remains a foundation; its original scale should not be mistaken for a promise about the game being built today."
+    ],
+    "highlights": [
+      "Initial galaxy generator, galaxy map and system map",
+      "C# generation and simulation separated from Godot presentation",
+      "Deterministic addresses and seeds",
+      "Readable map typography and labels across resolutions"
+    ],
+    "limitations": [
+      "Historical map milestone, not a playable survival or space-travel release",
+      "The original astronomical scale has been superseded by the compact-world design"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/system-map.jpg",
+      "alt": "Star-system map with planetary orbits and a selected planet",
+      "caption": "System-map development capture · historical generator and scale.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/first-base.jpg",
+        "alt": "A small stone base among trees with the survival HUD visible",
+        "caption": "A first base in the ground-game development build.",
+        "kind": "capture",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-12-star-systems-with-identity",
+    "date": "2026-10-12",
+    "order": 1,
+    "title": "Giving star systems their own identity",
+    "summary": "Stellar ages, multiple-star orbits and physical planet descriptions gave the generator a richer vocabulary for building distinct places.",
+    "category": "Worldbuilding",
+    "verificationStatus": "Retrospective: generator improvements implemented and tested",
+    "paragraphs": [
+      "Looking back at 12 October, the generator moved beyond arranging stars and planets into attractive diagrams. Stars gained ages and evolutionary outcomes, including evolved stars and remnants. Multiple-star systems gained an orbit structure that could describe planets circling a companion or a pair of stars, rather than forcing every system into a single-star template.",
+      "Planets and moons received richer physical descriptions. Composition, atmosphere, climate, geology and biosphere state became the basis for their classifications and hazards. The purpose was to make a world's identity emerge from related properties, so that its description could eventually inform what a player finds there.",
+      "An authored layer added familiar stars, real planetary systems and named regions alongside procedural generation. The work also strengthened reproducibility checks and made changes to generated output explicit. Optional reference data should enrich the catalogue without unpredictably changing unrelated generated places.",
+      "Three interactive map concepts explored different approaches to search, zoom and reach. They were experiments in usability, not a final map design or proof of navigable space. The current project reuses the system-generation work within a smaller galaxy and compact planets; direct travel and the final space presentation remain separate implementation work."
+    ],
+    "highlights": [
+      "Stellar ages, evolved stars and remnants",
+      "Orbits around individual stars and multiple-star systems",
+      "Planetary composition, atmosphere and climate descriptions",
+      "Authored real systems alongside deterministic generation",
+      "Three interactive map-interface concepts"
+    ],
+    "limitations": [
+      "Generated planetary properties do not establish playable environments on every world",
+      "Map concepts were exploratory and do not define the final interface",
+      "The current galaxy uses the later 1,000-star maximum"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/system-map.jpg",
+      "alt": "Star-system map with planetary orbits and a selected planet",
+      "caption": "System-map development capture · historical generator and scale.",
+      "kind": "capture"
+    }
+  },
+  {
+    "slug": "2026-10-12-survival-game-takes-shape",
+    "date": "2026-10-12",
+    "order": 2,
+    "title": "A survival game takes shape",
+    "summary": "Networking, gathering, crafting, building and combat came together on a rendered planetary surface, with persistent characters and hosted multiplayer checks.",
+    "category": "Gameplay",
+    "verificationStatus": "Retrospective: integrated prototype with scoped multiplayer checks",
+    "paragraphs": [
+      "The ground work on 12 October turned the project into a connected survival prototype. A dedicated .NET server decided the results of player actions, while the client predicted movement and displayed other players smoothly. Characters could survive a server restart, and early multiplayer checks exercised the connection before the world and gameplay layers grew around it.",
+      "Gathering, crafting, containers, survival stats, melee and bows were connected to a first-person HUD and inventory. Death, corpses and sleeping characters gave possessions a place in the world beyond a single session. Terrain, ocean, sky, vegetation and shader grass then replaced the initial presentation placeholders, bringing those rules into an actual landscape.",
+      "Building added structural pieces, grades, doors, locks, stability, upkeep and collapse. Networked placement spent real inventory resources and survived restarts. Firearms brought server-resolved bullet flight, ammunition, attachments, armour and a wounded state. Raiding connected explosives, blast shielding and structural destruction, including attacks on bases whose owners were offline.",
+      "Models, sound and effects were integrated alongside the rules so that building, gathering and combat could be seen and heard in hosted play. Development exercises included separate 100-bot survival, building, combat and raid scenarios, plus captures with two players and 50 bots. These are bounded historical checks on the recorded setup, not a guarantee of supported player capacity or current performance."
+    ],
+    "highlights": [
+      "Dedicated server, predicted movement and persistent characters",
+      "Connected gathering, crafting, inventory and survival",
+      "Networked building, upkeep and structural collapse",
+      "Firearms, armour, wounded players and explosives",
+      "Hosted gameplay captures and scenario-specific bot exercises"
+    ],
+    "limitations": [
+      "Development measurements are specific to their scenarios and hardware",
+      "Passing individual checks did not make the entire survival game finished",
+      "This milestone predates the compact Earth starting-world implementation"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/crafting.jpg",
+      "alt": "Crafting interface with recipe categories, item grid and resource costs",
+      "caption": "Crafting and resource costs · ground-game development capture.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/first-base.jpg",
+        "alt": "A small stone base among trees with the survival HUD visible",
+        "caption": "A first base in the ground-game development build.",
+        "kind": "capture",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-13-first-base-to-tin-finch",
+    "date": "2026-10-13",
+    "order": 1,
+    "title": "From the first base to the Tin Finch",
+    "summary": "The starter spacecraft entered the connected game alongside recycling, research, technology trees, teams and a growing wildlife loop.",
+    "category": "Gameplay",
+    "verificationStatus": "Retrospective: connected gameplay and local-flight checks",
+    "paragraphs": [
+      "By the morning of 13 October, the Tin Finch had moved from a vehicle asset and development sandbox into the connected ground game. Players could craft it at a Vehicle Workbench, board through its hatch and fly from the cockpit or a chase camera. Fuel, boost, landing and crash consequences gave the small craft a practical role beyond simply moving the camera above the ground.",
+      "The same integration brought salvage, components, loot containers, recycling, workbench technology trees and the Research Bench into the playable loop. Blueprints could be learned, materials could be recovered from unwanted loot, and technology provided goals beyond collecting another stack of resources. Teams, teammate markers and a shared map helped players coordinate those activities.",
+      "Wildlife added another source of risk and useful materials. Deer, boars, wolves and bears had movement and attack behavior, while carcasses supplied meat and other crafting resources. A recorded development exercise combined 100 survival bots with 200 animals to investigate the cost of those systems together. It was a specific stress scenario, not a statement about the population of every part of the world.",
+      "The F1 console also became a useful playtesting tool, with server-checked commands, item browsing and live connection information. The recorded integration included hosted screenshots of crafting, research, teams, boarding and flight. The Tin Finch milestone established local planetary flight; continuous travel to another planet or star system was still outside its scope."
+    ],
+    "highlights": [
+      "Tin Finch crafting, boarding, fuel and flight in the connected game",
+      "Recycling, Research Bench and learnable blueprints",
+      "Workbench technology trees, teams and map markers",
+      "Wildlife behavior and carcass harvesting",
+      "Server-checked F1 tools for repeatable playtesting"
+    ],
+    "limitations": [
+      "Flight evidence covers the local planetary environment",
+      "Interplanetary and interstellar journeys were not implemented by this milestone",
+      "Bot and animal measurements do not establish production capacity"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/first-base.jpg",
+      "alt": "A small stone base among trees with the survival HUD visible",
+      "caption": "A first base in the ground-game development build.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/tin-finch-flight.jpg",
+        "alt": "The Tin Finch flying above a wooded landscape",
+        "caption": "Tin Finch flight · ground-game development capture.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/tin-finch-cockpit.webp",
+        "alt": "Tin Finch cockpit with analog gauges, pedals and joystick",
+        "caption": "Inside the Tin Finch · original asset render.",
+        "kind": "render",
+        "afterParagraph": 4
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-13-actions-that-read-clearly",
+    "date": "2026-10-13",
+    "order": 2,
+    "title": "Making every action read clearly",
+    "summary": "Playtest feedback led to clearer gathering, consistent interaction and placement, better lootbags, and a loading process that waits for the world.",
+    "category": "Gameplay",
+    "verificationStatus": "Retrospective: focused rules and rendered interaction checks",
+    "paragraphs": [
+      "The 13 October playtests exposed a gap between rules that worked and actions that communicated clearly. Tree and ore hits could be difficult to read, some placement actions lacked a preview, and important interactions were hidden behind inconsistent controls. This pass focused on making the same actions understandable in the player's hands.",
+      "Trees gained a moving painted weak spot, visible reactions and better-timed felling feedback. Ore nodes gained surface-aligned hotspots and staged break effects. Hit feedback was placed at the actual contact point and old hits stopped replaying when an area came into view. Dropped items were gathered into small lootbags, replacing cases where an inventory item appeared on the ground as its full-size world model.",
+      "Interaction, placement, held-item behavior and radial menus moved onto shared systems. The placement preview and the server now used the same rules, with a reason shown when an object could not fit. Doors, locks, deployables and the Tin Finch gained consistent placement and interaction paths. Free look, ammunition selection, item information and retrieving arrows from the surfaces they struck also became part of the connected experience.",
+      "A staged loading screen waited for the world and renderer to be ready before handing control to the player. Building art received a measured repair pass for gaps, overlapping faces and detail-level transitions, while destruction effects used fragments of the project's actual models. Hosted captures and focused checks supported these changes, but some startup stalls, debris collision limits and character-presentation issues remained for later work."
+    ],
+    "highlights": [
+      "Readable tree weak spots and ore hotspots",
+      "Lootbags that combine nearby dropped items",
+      "Shared placement rules, previews and refusal reasons",
+      "Consistent interaction and radial menus",
+      "Loading stages, repaired building joints and model-based debris"
+    ],
+    "limitations": [
+      "The loading screen did not remove every startup stall",
+      "Debris did not yet collide with every wall or other fragment",
+      "Character and held-item polish continued beyond this pass"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/crafting.jpg",
+      "alt": "Crafting interface with recipe categories, item grid and resource costs",
+      "caption": "Crafting and resource costs · ground-game development capture.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/first-base.jpg",
+        "alt": "A small stone base among trees with the survival HUD visible",
+        "caption": "A first base in the ground-game development build.",
+        "kind": "capture",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-14-places-and-shared-systems",
+    "date": "2026-10-14",
+    "order": 1,
+    "title": "Places to discover, systems to build on",
+    "summary": "A substantial monument art archive and a clearer shared architecture gave the growing game more room to develop, with better tools for inspecting it.",
+    "category": "Worldbuilding",
+    "verificationStatus": "Retrospective: built art and architecture checks; monument gameplay unfinished",
+    "paragraphs": [
+      "This retrospective covers the monument work of 13 October and the systems work that followed on 14 October. The monument archive reached 55 built types represented by 57 model variants, supported by 64 shared modular parts. Mining camps, research outposts, launch facilities, wrecks and larger remnants established a visual library for the remains of an earlier civilization.",
+      "The distinction between art and gameplay matters here. Models, definitions and previews existed and could be inspected in a dedicated viewer. Their full placement rules, encounters, rewards and site interactions were still separate work. The archive is a resource for the current compact-world design, which must choose and adapt sites to fit its planets rather than inherit every earlier scale assumption.",
+      "As the survival game grew, its internal structure was reorganized around registered systems with clearer responsibilities. Simulation rules, network handlers, data readers and client and server modules were separated from the hosts that coordinate them. The aim was practical: adding another feature should extend the shared systems instead of creating a new special case across the whole game.",
+      "The F2 developer panel made that structure visible during play. It displayed server timing, connected players, inspected objects, collision overlays and logs, helping turn a vague report into something that could be examined. The architecture milestone recorded 224 passing checks, followed by 225 with the panel. Those are historical results for this work; they do not establish that every later feature or known issue was complete."
+    ],
+    "highlights": [
+      "55 built monument types and 57 model variants",
+      "64 shared modular monument parts",
+      "Dedicated monument viewing and preview tools",
+      "Clearer shared simulation, networking and content systems",
+      "F2 inspection of timing, players, objects and collision"
+    ],
+    "limitations": [
+      "Built monument art does not mean finished playable sites",
+      "Site selection, distribution and gameplay must follow the current compact-world design",
+      "Historical architecture checks do not describe the latest repair checkout"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/research-outpost.jpg",
+      "alt": "Research outpost with radar tower, laboratories and service buildings",
+      "caption": "Research outpost · monument development overview.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/crafting.jpg",
+        "alt": "Crafting interface with recipe categories, item grid and resource costs",
+        "caption": "Crafting and resource costs · ground-game development capture.",
+        "kind": "capture",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-15-whole-world-and-iron-wake",
+    "date": "2026-10-15",
+    "order": 10,
+    "title": "A whole world, and a ship you can walk around",
+    "summary": "Spherical ground, a globe-to-chart map and the crewed Iron Wake expanded the foundation, while integrated playtesting remained essential.",
+    "category": "Gameplay",
+    "verificationStatus": "Retrospective: implemented systems with remaining integrated playtests",
+    "paragraphs": [
+      "The 15 October world milestone extended the ground game to a complete sphere. Terrain, sea, the horizon and vegetation followed the planet's shape, while falling objects and movement used the local direction of gravity. One world map could transition between a globe and a flat chart, sharing location references with navigation and respawn views.",
+      "The walking-ground work added sixteen surface layers derived from the project's owned scans, along with lakes and streams rendered as water. Captures made it possible to inspect forests, plains, mountains and coasts at ground level. They also exposed issues such as vegetation in unsuitable places and waterline artifacts, providing concrete targets for the repair work that followed.",
+      "The Iron Wake explored a different scale of play: a large crewed spacecraft whose decks can be walked and furnished. Its implementation brought ship-relative movement, multiple seats, doors, crewed batteries, building aboard and incendiary fire. Interior lights, sound and effects gave those systems a presentation layer, while model repairs closed hull openings and improved the visible loading machinery.",
+      "This was substantial implementation work, not a declaration that the carrier was finished. Individual packages built and passed their focused checks, but several combined visual, audio and crewed-combat scenarios still needed review in play. The whole-world foundation also predates the final compact Earth sizing described in our current-direction update; its older planet dimensions are not the current design."
+    ],
+    "highlights": [
+      "Ground simulation and rendering across a whole spherical world",
+      "Shared globe and flat-chart map",
+      "Sixteen ground layers with lakes and streams",
+      "Walkable Iron Wake decks, seats and building aboard",
+      "Crewed batteries, interior presentation and hull repairs"
+    ],
+    "limitations": [
+      "Combined carrier controls, sound and visual behavior still required playtesting",
+      "Some terrain and vegetation presentation issues remained",
+      "Whole-world rendering is not proof of travel between separate worlds"
+    ],
+    "published": "2026-10-15",
+    "image": {
+      "src": "/assets/devblog/iron-wake-flight.jpg",
+      "alt": "Iron Wake hovering with a passenger visible through its open rear bay",
+      "caption": "Iron Wake boarding and flight test · October 15 development capture.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/walking-forest.png",
+        "alt": "Grass, flowers and trees on the walking-scale terrain",
+        "caption": "Walking-scale terrain · October 15 development capture.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/tin-finch-flight.jpg",
+        "alt": "The Tin Finch flying above a wooded landscape",
+        "caption": "Tin Finch flight · ground-game development capture.",
+        "kind": "capture",
+        "afterParagraph": 4
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-15-hollow-universe-current-direction",
+    "date": "2026-10-15",
+    "order": 30,
+    "title": "Hollow Universe: our name and the direction ahead",
+    "summary": "We are Hollow Universe. The current game starts on Earth with a rock and a torch, building toward a compact, persistent survival sandbox among the stars.",
+    "category": "Project Notes",
+    "verificationStatus": "Current design confirmed; compact Earth foundation verified",
+    "paragraphs": [
+      "We are now Hollow Universe. The name belongs to the project we are building today: a sandbox survival game set after humanity's near-extinction, where advanced technology coexists with equipment and structures that people make themselves. This update brings the site's identity into line with that direction and looks back at the concrete foundation established on 15 October.",
+      "The journey begins on Earth with one rock and one torch. Gathering, looting and crafting lead into a first base, stronger equipment, resource control and eventually spacecraft. Full-loot PvP and offline raiding remain part of the design, alongside the requirement that exploration and production give a lone player worthwhile things to do. The familiar ground interface is being preserved while the wider game develops around it.",
+      "The scale is now explicit: at most 1,000 stars, and no planet larger than approximately 23.04 square kilometres across its entire surface. The current Earth implementation has a radius of 1,200 metres and about 18.10 square kilometres of surface. The default finite galaxy contains 1,000 stars across 610 systems. Direct flight between planets and systems, without a separate supercruise mode, is the intended travel experience; completing that connected journey remains work ahead.",
+      "Separate Vehicle and Engineering Workbenches are part of the new foundation. The Tin Finch requires its vehicle technology and station, while the Engineering Workbench exists without an invented technology catalogue. Local flight now crosses the old orbital marker and returns under ordinary controls, within the current planet's flight volume. The compact Earth milestone passed all 298 recorded gameplay and supporting checks, with clean builds, inspected menu and world captures, and a saved character successfully rejoining after restart.",
+      "That successful baseline is a milestone, not the whole design delivered. Later repairs have their own status in the next journal entry. Travel between worlds, modular upgrades, electricity, oxygen equipment and other systems still need connected implementation and validation. Surveying, wreck recovery, factory networks and repeatable monument activities are proposals being considered for long-term play, rather than features we are announcing as already available."
+    ],
+    "highlights": [
+      "Hollow Universe is the current project identity",
+      "Earth start with exactly one rock and one torch",
+      "Maximum 1,000 stars and 23.04 km² per planet's entire surface",
+      "Vehicle progression and continuous local ascent and return",
+      "298/298 checks passed at the compact Earth baseline"
+    ],
+    "limitations": [
+      "Continuous travel between planets and star systems is not yet complete",
+      "The 298/298 result predates the subsequent repair work",
+      "Long-term activity proposals remain distinct from implemented features",
+      "No release date or production player-capacity claim"
+    ],
+    "image": {
+      "src": "/assets/hollow-earth.png",
+      "alt": "Earth grassland with the rock and torch in the hotbar",
+      "caption": "Earth and the starting kit · October 15 development capture.",
+      "kind": "capture"
+    },
+    "published": "2026-10-15",
+    "media": [
+      {
+        "src": "/assets/hollow-galaxy.png",
+        "alt": "Finite galaxy displayed in the current Hollow Universe map",
+        "caption": "The finite galaxy · October 15 development capture.",
+        "kind": "capture",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-15-controls-survival-and-salvaged-axe",
+    "date": "2026-10-15",
+    "order": 20,
+    "title": "The repair pass: controls, survival and the Salvaged Axe",
+    "summary": "The latest pass improves ship handling, inventory input and breathing, adds the Salvaged Axe, and keeps unresolved checks visible.",
+    "category": "Gameplay",
+    "verificationStatus": "Scoped repairs verified; full checkpoint 330/334, work continues",
+    "paragraphs": [
+      "This entry records the repair work following the compact Earth baseline on 15 October. The focus is on how the existing game behaves in the player's hands. Ships now retain movement commands when the helm is empty and have explicit engine controls. Steering and throttle were revised, and every seat gained a player-centred orbit-camera path. Focused flight and save checks passed, while the combined mouse gestures and seated presentation still needed live review.",
+      "Inventory improvements include rotating the character preview, more reliable hover-looting and native windowed, borderless and exclusive display settings. Actual interface-input checks covered the new gestures, and native display-mode checks confirmed the requested modes. Weapon presentation also received fixes to existing hand and bow paths, but initial captures exposed further problems; a complete held-item animation and visual-authoring pass remains active work.",
+      "Survival now has a shared breathing rule that checks the player's eye against the local water surface, including lakes and streams. Reserve, recovery, drowning and saved breathing state were exercised, and the HUD can show oxygen. Animals were also prevented from biting through blocking structures or attacking players protected by supported floors and foundations. Oxygen-providing equipment is still a separate design requirement; the breathing repair does not claim to deliver it.",
+      "The Salvaged Axe joined the item catalogue as a stronger woodcutting tool with its own imported model, inventory icons and editable held-item profile. It follows the shared blueprint, loot, crafting, gathering and sound systems instead of introducing a separate progression path. Focused checks covered finding and learning the blueprint, workbench requirements, crafting and harvesting. First-person, third-person and swing captures were inspected. Its balance and research eligibility remain subject to further tuning.",
+      "The latest recorded full run at this checkpoint passed 330 of 334 checks, including the new axe coverage. Four failures remained in the shared repair work, so the earlier 298/298 baseline cannot be used to call this later state clean. Follow-up fixes and visual review are continuing. The useful progress here is a set of specific, demonstrated improvements, with the unfinished parts still recorded openly."
+    ],
+    "highlights": [
+      "Retained ship commands and explicit engine controls",
+      "Inventory gestures and native display-mode checks",
+      "Shared breathing and inland-water survival rules",
+      "Animal attacks respect blocking structures and supported floors",
+      "Salvaged Axe content and inspected gameplay presentation"
+    ],
+    "limitations": [
+      "The full repair checkpoint has four remaining failures: 330/334 passed",
+      "Held-item animation, weapon presentation and combined controls remain under review",
+      "Oxygen equipment has not been delivered by the breathing repair",
+      "New item balance and rare-variant research eligibility are provisional"
+    ],
+    "image": {
+      "src": "/assets/devblog/current-ground.png",
+      "alt": "Earth ground gameplay with a river, vegetation and the starting rock and torch hotbar",
+      "caption": "Fresh gameplay capture from the current development build on 15 October, using a separate temporary world.",
+      "kind": "capture"
+    },
+    "published": "2026-10-15",
+    "media": [
+      {
+        "src": "/assets/devblog/repair-results.svg",
+        "alt": "Recorded repair checkpoint and separate focused validation",
+        "caption": "Visual summary of the recorded repository results for this milestone; not a gameplay screenshot.",
+        "kind": "report",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-15-held-item-workshop",
+    "date": "2026-10-15",
+    "order": 40,
+    "title": "A workshop for hands, grips and held-item motion",
+    "summary": "A standalone editor now brings item placement, hand posing and action keyframes into the same first- and third-person renderers used by the game.",
+    "category": "Art & Animation",
+    "verificationStatus": "Working editor preview; animation polish and wider validation remain in progress",
+    "published": "2026-10-15",
+    "paragraphs": [
+      "Getting a held item right means more than moving a model into the camera. The grip, fingers, shoulders and motion all have to agree, and the result must work both in the player’s hands and on the character other people see. The new held-item workshop puts those controls beside a live preview, with a searchable item library and first-person, arms-orbit and third-person views.",
+      "The screenshot shows the bow’s draw action at 60% of its authored timeline. Placement, Hands and Motion tabs separate the rest grip from the action. The editor exposes position and rotation, hand offsets, finger poses, keyframe interpolation and the event marker. Scrubbing lets us inspect a particular moment; playback shows how the anticipation, event and recovery connect.",
+      "The preview uses the game’s existing first-person and character renderers. Gameplay timing can align an authored event with the simulation’s tick-based action duration. The visible target and contact adjustment are authoring aids: an edited pose does not award a hit, change reach, consume ammunition or alter the server’s rules.",
+      "Profiles are saved as validated project JSON, with undo, redo, reload and protection against overwriting external changes. This is an active tool and presentation pass, not a claim that every grip and animation is finished. The workshop also exposes arm-reach correction so a pose that needs adjustment is visible during authoring. The images here show the actual editor, including the owner’s bow-motion capture and a fresh third-person capture from the current build."
+    ],
+    "highlights": [
+      "Searchable held-item library and shared gameplay preview",
+      "Separate placement, hand-pose and motion controls",
+      "Editable action keys, interpolation and event timing",
+      "First- and third-person comparison",
+      "Undo, redo and validated profile saving"
+    ],
+    "limitations": [
+      "Individual grips and motion still need visual polish across items and body variants",
+      "The preview target is not an authoritative gameplay hit test",
+      "Full runtime and animation acceptance remain in progress"
+    ],
+    "image": {
+      "src": "/assets/devblog/held-workshop-bow.png",
+      "alt": "Held-item workshop showing first-person bow draw at 60 percent with Motion controls and timeline",
+      "caption": "Bow draw at 60% · actual held-item workshop, captured by the project owner on 15 October.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/held-workshop-tps.png",
+        "alt": "Held-item workshop showing the bow draw on the third-person character with hand controls",
+        "caption": "The same bow draw in third person · fresh capture from the current Godot build, 15 October.",
+        "kind": "capture",
+        "afterParagraph": 2
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-16-admin-tools-shadows-and-leaving-a-game",
+    "date": "2026-10-16",
+    "order": 41,
+    "title": "Admin tools, shadow budgets and a way out of the game",
+    "summary": "Free building and crafting for testers, a third-person admin camera, loading and shadow fixes, and a DISCONNECT button that lets go cleanly.",
+    "category": "Engineering",
+    "verificationStatus": "Checked in focused builds and native runs; wider combat and performance work continues",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "The sixteenth of October was repair-wave work: the unglamorous changes that make a survival game faster to test. The F1 console’s TOOLS tab gained a BUILDING section. BGRADE places structural pieces at a chosen tier (Twig, Wood, Stone, Metal or Armoured) at full health, and FREE BUILD covers construction, upgrades, hammer repairs, keys and repeated placement without resource costs. A matching free-crafting switch shows every recipe and skips ingredients, blueprints and workbench requirements while keeping ordinary crafting times.",
+      "These are admin switches, not shortcuts around the rules. Reach, collision, support, claim authorisation and ownership limits are still enforced, explosive charges are still consumed, and the flags live only in the session: they reset on reconnect or when admin rights are revoked, and they are never written into a save. The admin camera is the other tester’s tool. A THIRD PERSON mode orbits the player with the right mouse button, zooms from 1.5 to 20 metres and draws the full character, with clothing, held item and stance, using the same renderer other players see.",
+      "The Esc menu now has DISCONNECT. It returns to PLAY / CONNECT with the address form open, without closing the game; a locally hosted server saves and stops, and a remote one keeps running. A native test drove real keyboard and mouse events through hosting, disconnecting, connecting to a second server, disconnecting again and re-hosting on the first port, and checked that the old session’s views, audio and inventory preview were torn down cleanly.",
+      "Two loading and performance changes landed too. The last loading stage, which waits for steady frames, could wait forever below 30 FPS once everything was ready; it now has a five-second deadline. A new SHADOWS settings tab exposes sun cascades (1, 2 or 4), shadow quality and distance, and a budget of 0 to 8 local shadow lights shared by ship lamps, weapon beams and torches. In one isolated test, two cascades cut draw calls from 1,561 to 1,161 and the mean frame from 16.40 to 15.73 ms. That is one scene on one graphics card, not a general promise."
+    ],
+    "highlights": [
+      "BGRADE tiers and FREE BUILD for administrators, session-only and never saved",
+      "Free crafting that keeps ordinary crafting times",
+      "Third-person admin camera with orbit and zoom",
+      "DISCONNECT in the Esc menu without quitting the game",
+      "Five-second deadline on the final loading stage; new SHADOWS settings tab"
+    ],
+    "limitations": [
+      "The F1 tools are for administrators and testers; ordinary players do not get free building or crafting",
+      "Combat prediction and feedback synchronisation defects were reproduced and documented this week; these changes do not fix them",
+      "Baked shadowmasks are not implemented, so shadows remain real-time",
+      "The F1, crafting and menu pictures are the interface viewer on sample data, not a live server session"
+    ],
+    "image": {
+      "src": "/assets/devblog/admin-camera-third-person.jpg",
+      "alt": "Third-person admin camera showing the player character in a meadow with the camera controls listed above the hotbar",
+      "caption": "Admin third-person camera · development capture, 16 October (the ground has been reworked since).",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/f1-tools-building.jpg",
+        "alt": "F1 console TOOLS tab with FREE BUILD on and BGRADE tier buttons",
+        "caption": "F1 TOOLS tab: FREE BUILD and BGRADE · interface viewer on sample data.",
+        "kind": "capture",
+        "afterParagraph": 1
+      },
+      {
+        "src": "/assets/devblog/free-crafting.jpg",
+        "alt": "Crafting screen showing a recipe marked FREE CRAFTING with zero ingredients required",
+        "caption": "A recipe marked FREE CRAFTING · interface viewer on sample data.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/menu-disconnect.jpg",
+        "alt": "Esc menu with Resume, Disconnect, Settings and Quit",
+        "caption": "The connected Esc menu with DISCONNECT · interface viewer.",
+        "kind": "capture",
+        "afterParagraph": 3
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-18-wires-wind-power-and-a-centred-crosshair",
+    "date": "2026-10-18",
+    "order": 42,
+    "title": "Wires, wind power, a centred crosshair and Drop All",
+    "summary": "A first electricity foundation powers a defence line from a windmill, the HUD marker becomes a setting, and one button empties a backpack.",
+    "category": "Gameplay",
+    "verificationStatus": "Foundation implemented and focused-tested; static ground wiring only",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "Electricity now has a foundation instead of ad-hoc power flags. Devices declare physical ports in data, amber for outputs and cyan for inputs, and a new Wire Tool runs a cable from an output through optional surface anchors to an input. The server enforces a 20-metre limit between endpoint ports, rejects cycles and occupied ports, checks rights at both ends and refuses cables whose route is obstructed. Circuits nobody is editing do no work each tick, and a test touching one circuit among 1,000 unrelated ones confirmed that rebuilding stays local.",
+      "Three production items are wired so far: the windmill, the auto turret and the SAM site. In the review scene, wind power runs through the turret and on to the SAM, and a consumer that is off or under-supplied passes whatever power remains onward. Alongside it, shared device authorisation records who may use a device. It stores grants and exclusions, lets a device follow its tool cupboard or be set to manual only, and gives a newly placed, unclaimed device its placer’s protection. The SAM uses the pilot’s identity, so a passenger in the seat does not make it friendly.",
+      "The crosshair is now a setting. The owner asked for one centred marker instead of a separate dot and firearm ticks, with a dot as the default. The CROSSHAIR tab offers Off, Dot, Cross, Cross + Dot, Ring and Ring + Dot, six colours, and size, dot size, thickness, gap, opacity and outline, with a live preview drawn by the same code as the in-game marker. Optional dynamic spread widens crosses and rings while firing from the hip. A native check of 53 conditions measured the rendered pixels at two resolutions and two interface scales and found the marker exactly at the centre (0 px error).",
+      "A small inventory change completes the batch. DROP ALL sits beside INVENTORY and drops the 24 backpack slots only, leaving the belt, worn equipment and any open loot alone. The server treats it as one all-or-nothing request, so a stale inventory rejects the whole action and the client’s prediction rolls back instead of leaving half a stack on the ground."
+    ],
+    "highlights": [
+      "Data-declared ports and a Wire Tool with a 20 m endpoint limit",
+      "Windmill, auto turret and SAM site wired end to end",
+      "Persistent device authorisation with tool-cupboard following",
+      "Six crosshair styles and a live preview; the default is a static white dot",
+      "Backpack-only DROP ALL as a single server-checked request"
+    ],
+    "limitations": [
+      "Only the windmill, auto turret and SAM site are wired; batteries, solar panels and branches are later content",
+      "Where tool cupboards overlap, a device currently requires membership in all of them: an engineering default, not a settled design rule",
+      "The Wire Tool was functional foundation art when this was written; an original model followed on 19 October",
+      "The electricity pictures are a presentation fixture built from production models, and the crosshair preview sits on a sample backdrop; neither is a recorded multiplayer session",
+      "The full engine-free test suite was not fully green at either checkpoint; the failures were in areas these changes do not touch"
+    ],
+    "image": {
+      "src": "/assets/devblog/electricity-wind-turret-sam.jpg",
+      "alt": "A windmill wired by cable to an auto turret and on to a SAM launcher on a flat test plane",
+      "caption": "Wind to turret to SAM · native review scene using the production models, cables and ports.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/electricity-ports.jpg",
+        "alt": "Close view of cable ports on the turret and SAM base, amber outputs and cyan inputs",
+        "caption": "Port detail: amber is an output or passthrough, cyan an input · review scene.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/crosshair-settings.jpg",
+        "alt": "Settings screen on the CROSSHAIR tab with style, colour, size and a live preview",
+        "caption": "The CROSSHAIR tab with its live preview · settings screen, 18 October.",
+        "kind": "capture",
+        "afterParagraph": 3
+      },
+      {
+        "src": "/assets/devblog/crosshair-ring-dot.jpg",
+        "alt": "In-game HUD with a ring and dot crosshair at the exact centre of the screen",
+        "caption": "Ring + Dot at the exact centre · interface viewer on a sample backdrop.",
+        "kind": "capture",
+        "afterParagraph": 3
+      },
+      {
+        "src": "/assets/devblog/drop-all-inventory.jpg",
+        "alt": "Inventory screen with the DROP ALL button beside the INVENTORY heading",
+        "caption": "DROP ALL beside INVENTORY · interface viewer on sample data.",
+        "kind": "capture",
+        "afterParagraph": 4
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-20-a-meadow-worth-walking-through",
+    "date": "2026-10-20",
+    "order": 43,
+    "title": "A meadow worth walking through",
+    "summary": "Thirty-four ground textures, grass rebuilt as clumps of several species, and recorded footsteps that depend on surface and footwear.",
+    "category": "Art & Animation",
+    "verificationStatus": "Measured in the game on one machine; owner look review still pending",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "The owner’s captures of the meadow showed three problems: a quilt of half-metre squares of grass and bare mud, mud under every tuft, and a flat, blurry beach. The squares came from the grass itself, which gave each cell either a whole tuft or nothing. Now every cell where grass grows has a tuft, and its cards come and go one by one as density changes. The ground under the grass was the second cause: the scan used beneath it was trampled mud. The ground now carries 34 4K textures, the original sixteen plus alternatives chosen per pixel, so lush grass grows over a green grass-ground scan and the beach is pebbly sand.",
+      "On 20 October the grass itself was rebuilt. It is now drawn as clumps modelled in Blender from text: field grass, tall grass in seed, dry grass, flower clumps, heather or leafy herbs, and litter, with a hand-painted atlas, real normals and cheap distant levels. One coverage rule decides what grows where from the terrain’s own climate (meadow, forest edge, forest floor, dry, tundra). Flowers are back at about six per cent of a meadow’s clumps, and blade colour follows the ground’s tint at its root. Clumps are built in 16-cell tiles on worker threads and uploaded a few per frame.",
+      "The result also costs less. In the same test clearing on one graphics card, the High preset’s GPU frame fell from about 21.3 ms to 15.7–16.7 ms, and on the owner’s own lower-detail profile from 9.3 to 4.7 ms; the primitives drawn fell from 12.5 million to 8.0 million. Removing the new grass makes the frame slower, because the clumps hide expensive terrain pixels. The extra textures are not free: about 2.0 GB of files and 1.7 GB of video memory, so the Low preset skips the alternatives.",
+      "Footsteps got the same treatment. On 18 October the old grass and dirt steps were replaced by recorded banks, then extended to eight surfaces: grass, dirt, sand, rock, snow, wood, metal and shallow water. A library of 193 recorded source clips produces 579 sound files in three footwear profiles, barefoot, shoes and boots, and the work boots in the game today select the boots profile. The footwear sound is a treatment applied to one recorded library, not separate recordings of each shoe; a future shoe item only needs to name a profile."
+    ],
+    "highlights": [
+      "34 ground textures with per-pixel alternatives, built from owned scans",
+      "Grass rebuilt as clumps of several species with one coverage rule",
+      "GPU frame at High down from about 21.3 to 16 ms in the test clearing",
+      "Eight surfaces and three footwear profiles for footsteps"
+    ],
+    "limitations": [
+      "The owner’s look review is still pending; ground colours were tuned on one meadow and one beach",
+      "Seen straight down, floor shows between clumps, and from tens of metres up the cards vanish edge-on",
+      "Forest-floor clumps look dark under the canopy’s ambient occlusion",
+      "Frame times are from one machine and one clearing (an RTX 2070 SUPER) and are not a guarantee for other hardware",
+      "Footwear sounds are derived treatments of one library; there are no separate barefoot, shoe or boot recordings"
+    ],
+    "image": {
+      "src": "/assets/devblog/meadow-dawn.jpg",
+      "alt": "Tall meadow grass with seed heads and scattered rocks under a low morning sun",
+      "caption": "The meadow in low morning sun · hosted development capture, 20 October.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/meadow-midday.jpg",
+        "alt": "Dense meadow of several grass species with seed heads and small flowers at midday",
+        "caption": "The open meadow at hour 10 · hosted capture, 20 October.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/meadow-wood-edge.jpg",
+        "alt": "Birch and broadleaf trees at a wood’s edge above a grassy hillside",
+        "caption": "The edge of the wood, looking up the hillside · hosted capture, 20 October.",
+        "kind": "capture",
+        "afterParagraph": 3
+      },
+      {
+        "src": "/assets/devblog/meadow-dusk.jpg",
+        "alt": "Meadow grass lit orange by a low sun at dusk",
+        "caption": "Backlit seed heads at dusk · hosted capture, 20 October.",
+        "kind": "capture",
+        "afterParagraph": 4
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-20-replacing-stand-ins-with-original-item-art",
+    "date": "2026-10-20",
+    "order": 44,
+    "title": "Replacing every stand-in with original item art",
+    "summary": "From a blueprint to a worn chest plate, more than twenty items now have original models and rendered icons instead of placeholders.",
+    "category": "Art & Animation",
+    "verificationStatus": "Models and icons checked in the game’s viewer; owner acceptance still pending on the newest items",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "On 18 October an audit of the item library found items still shown with stand-ins: a vector sketch for an icon, or a model borrowed from another item. Over the next three days each was replaced with an original model built from text in Blender, with levels of detail, a hull where the game needs one, gibs where the item can break, and an icon rendered from the model at the game’s real slot sizes.",
+      "The pictures here compare the previous icon with the new one. The research bench went from a flat table with a lamp to a worktable with a blueprint board and storage boxes. The blueprint went from a document glyph to a folded technical sheet, the explosives from a yellow blob to a banded block of compound, and the sign plate from a generic warning icon to two weathered road signs. Not every first attempt survived review: the owner rejected the first sewing kit, and it was redone as a spool with brown thread and a worn fibre core.",
+      "The same pass covered cloth, the metal blade, the gun receiver and rifle frame, torn and sealed schematics, salvage scrap, the wire tool and the door key. Clothing items now use the character package’s own garment meshes, so the woven hood, shirt, trousers and gloves, the work boots and the chest plate look in the inventory and on the ground the way they look when worn. The four door items (wooden, armoured, double and garage) were drawn from the corrected door kit, then lightened from 16,000–24,000 triangles to about 5,000–6,000 at the highest level of detail.",
+      "Each replacement records its provenance, passed a catalogue test and was inspected in the model viewer before it was committed. That does not make the art final: where the owner has not yet signed an item off, the record says so."
+    ],
+    "highlights": [
+      "More than twenty original item models with rendered icons",
+      "Clothing items are the worn garments themselves",
+      "Door items rebuilt from the corrected kit and lightened",
+      "A rejected sewing kit redone after the owner’s review"
+    ],
+    "limitations": [
+      "Owner acceptance is pending on several of the newest models and icons",
+      "Icon pictures are renders from the production icon pipeline at diagnostic sizes with no world loaded; a live inventory and placement check remains",
+      "These are item models; ship, vehicle and building art have their own records"
+    ],
+    "image": {
+      "src": "/assets/devblog/item-research-bench.png",
+      "alt": "Research bench inventory icon at six sizes, the previous flat vector above and the new rendered model below",
+      "caption": "Research bench: previous icon (top) and new rendered model (bottom) at the inventory’s slot sizes · 19 October.",
+      "kind": "render"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/item-blueprint.png",
+        "alt": "Blueprint icon at six sizes, the previous document glyph above and a folded technical sheet below",
+        "caption": "Blueprint: a folded technical sheet replaces the document glyph · 19 October.",
+        "kind": "render",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/item-explosives.png",
+        "alt": "Explosives icon at six sizes, the previous yellow blob above and a banded block of compound below",
+        "caption": "Explosives: a banded block of compound · 19 October.",
+        "kind": "render",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/item-sign-plate.png",
+        "alt": "Sign plate icon at six sizes, the previous yellow warning sign above and two weathered road signs below",
+        "caption": "Sign plate: salvaged road signs · 18 October.",
+        "kind": "render",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/item-sewing-kit.png",
+        "alt": "Sewing kit icon at six sizes, the previous brown box above and a spool of brown thread with a needle below",
+        "caption": "Sewing kit, second version after the owner’s rejection of the first · 18 October.",
+        "kind": "render",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/item-salvage.png",
+        "alt": "Salvage icon at six sizes, the previous grey scrap tag above and a rusted gear, spring, pipe and nuts below",
+        "caption": "Salvage scrap: gear, spring, pipe and nuts · 19 October.",
+        "kind": "render",
+        "afterParagraph": 3
+      },
+      {
+        "src": "/assets/devblog/item-woven-shirt.png",
+        "alt": "Woven shirt icon at six sizes, the previous brown shirt above and the pale worn garment below",
+        "caption": "Woven shirt: the garment as it is worn · 20 October.",
+        "kind": "render",
+        "afterParagraph": 3
+      },
+      {
+        "src": "/assets/devblog/item-chest-plate.jpg",
+        "alt": "Riveted steel chest plate with shoulder guards and leather straps in the model viewer",
+        "caption": "Chest plate: the worn garment itself, first level of detail · model viewer, 20 October.",
+        "kind": "capture",
+        "afterParagraph": 3
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-20-doors-that-behave-the-same-from-both-sides",
+    "date": "2026-10-20",
+    "order": 45,
+    "title": "Doors that behave the same from both sides",
+    "summary": "Symmetric doors, hinge and swing chosen separately, doors that never refuse to move, and airlocks that fall out of the rules.",
+    "category": "Gameplay",
+    "verificationStatus": "Built, unit-tested and photographed in the hosted game; owner decisions on two defaults are pending",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "On 20 October the owner reported that our doors behaved nothing like Rust’s, and a read-only audit confirmed each point. One leaf had a detailed face and a flat one, hinge side and swing direction were tied together by a single 180-degree flip, a door refused to move if someone stood in the way, and collision jumped to the end pose while the animation was still travelling. The owner’s rules were written down as DOORS.md: both faces alike, doors that ignore everything and always move, collision that follows the real motion, hinge and swing chosen separately so airlocks can be built, and locks on both faces.",
+      "Four work packages followed within a day. Every leaf is now symmetric and sits inside its frame; the earlier kit had doors standing proud of them. A door has a layout: hinge on the left or right, swinging in or out, so a single door has four layouts, a double door two and the garage door one, and R steps through them when placing. A door is a motion record, a start tick and a direction, and its progress at any tick is arithmetic: a leaf swings in 30 ticks, a garage curtain rolls in 90. The server poses every body each tick, a closing leaf pushes anyone in its way out through the doorway rather than refusing, and the client predicts the same motion.",
+      "Airlocks fall out of those rules. Tests flood-fill the floor with the character’s capsule to prove that two doors whose open leaves end up in a small room really do block the walkway between them, including the owner’s own arrangement with both doors swinging in. The pictures are from the hosted game: a triangular airlock seen from above with its leaf swung in, a double door shut from outside, and a square room with a double door and a single door.",
+      "Under load, a build test with 30 bots made 238 door toggles with 36,030 reconciliations and no corrections, at 1.47 ms per server tick. Door items were redrawn from the corrected kit and lightened to about 5,000–6,000 triangles at the highest level of detail. A review also found that an open garage door still held a box 2.4 m into the storey above it; its body is now only the part still hanging below the header."
+    ],
+    "highlights": [
+      "Both faces alike, with the door inside its frame and a lock on both faces",
+      "Four hinge and swing layouts for a single door, two for a double door",
+      "Doors always move; collision follows the motion every tick",
+      "Airlocks built from open-leaf positions, tested by flood-filling the floor",
+      "30-bot door test: 36,030 reconciliations, no corrections"
+    ],
+    "limitations": [
+      "Whether a second press should reverse a moving door, and which layout a new door starts in, are proposals waiting for the owner’s decision",
+      "Alike faces roughly doubled the door model files (3.3 MB to 8.0 MB for the largest kit file); a lighter back is an option if it shows up in downloads",
+      "The 100-bot load test has not been run for doors",
+      "Gibs of right-hinged or outward doors still fly from the left-hinged leaf’s place, and the keypad sits on the frame’s outside face whichever side the lock was aimed at"
+    ],
+    "image": {
+      "src": "/assets/devblog/doors-triangle-airlock-open-above.jpg",
+      "alt": "Top-down view into a triangular stone room with a wooden door leaf swung open inside it",
+      "caption": "A triangular airlock from above, its open leaf swung inside · hosted capture, 20 October.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/doors-double-door-shut.jpg",
+        "alt": "A shut wooden double door in a stone frame, seen from outside",
+        "caption": "A wooden double door shut, seen from outside · hosted capture, 20 October.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/doors-room-airlock-open-inside.jpg",
+        "alt": "View through an open double door and a single door inside a small stone room",
+        "caption": "Inside the room airlock with its doors open · hosted capture, 20 October.",
+        "kind": "capture",
+        "afterParagraph": 3
+      },
+      {
+        "src": "/assets/devblog/doors-room-airlock-open-above.jpg",
+        "alt": "Top-down view of a square stone room with two open door leaves",
+        "caption": "The same room from above, both leaves open · hosted capture, 20 October.",
+        "kind": "capture",
+        "afterParagraph": 3
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-20-one-module-system-for-every-vehicle",
+    "date": "2026-10-20",
+    "order": 46,
+    "title": "One module system for a car, a bike, a helicopter and a boat",
+    "summary": "Four vehicle efforts agreed on one shared foundation: the TOGG, the Zamazingo, the KA-FA 1500 and a small motorboat.",
+    "category": "Engineering",
+    "verificationStatus": "Core and first vehicles built and tested; art and feel are first passes the owner is still judging",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "Four vehicle efforts ran side by side on 20 October and agreed to share one foundation. The core is a module system: a vehicle kind declares sockets, modules (cabins, engines, decks, storage) declare what they fit, and a composer builds the result and applies rules between parts. Each module has its own hold and its own health; shots and blasts find module bodies, the hammer repairs them through the same path as buildings, and the whole build is saved and sent with the vehicle. The same system is meant to serve ground vehicles, a rotorcraft and, later, spacecraft.",
+      "On top of it sit the TOGG, the modular car, and the Zamazingo, the motorbike (both names are the owner’s), crafted at the Vehicle Workbench and learned in its tech tree. The TOGG’s motor is a sprung-wheel ground motor with tyre grip, drive, brakes and steering; the first version stood, reached 19.5 m/s, climbed a 20° slope but not a 42° one, and gave identical results run twice. The owner’s first ride on the bike was blunt: not rideable. The fault was contact: wheel boxes with flat faces stopped it dead on a 15 cm step. Every wheel is now a round cylinder swept along its travel, so a tyre climbs a kerb the way a real one does. The measured 0–50 km/h time fell from 2.2 to 1.6 s, and the bike now clears kerbs of more than 25 cm from a crawl.",
+      "The KA-FA 1500, our minicopter, hovers with no input, moves by tilting, levels itself and weathercocks its tail; its lift follows the rotor’s spool squared and the thinning air, which gives it a ceiling. Its rotors turn from the spool, and its sound is built in code from the spool and collective. An automated tour flew it out and back to its pad in 96 seconds and touched down at 0.1 m/s, unhurt. The motorboat floats on six buoyancy columns, is driven by an outboard that pushes only while under water, is placed on water rather than land, and is crafted in 60 seconds at a level 1 workbench.",
+      "People matter too. Riders weigh on a vehicle’s springs at 85 kg each, and landings rock it; running people over is specified; engines can be switched on by hand; and the vehicle workbench’s bay is now marked on the ground with hazard-stripe paint and corner posts, after the owner could not see where it was."
+    ],
+    "highlights": [
+      "One module core shared by car, bike, minicopter and boat",
+      "TOGG and Zamazingo crafted at the Vehicle Workbench",
+      "Round tyres that climb kerbs; bike 0–50 km/h in 1.6 s",
+      "KA-FA 1500 rotor drive with a spool, a ceiling and a flown tour",
+      "Motorboat with buoyancy columns and an underwater-only outboard"
+    ],
+    "limitations": [
+      "The first TOGG and Zamazingo were drawn as blocks; the models in these pictures arrived later and are still being polished",
+      "Riding feel is the owner’s to judge; the figures above come from automated tests and tours",
+      "The boat’s sound has only been checked as waveforms, and its daylight retake is outstanding",
+      "The bike has no modules yet, and vehicle decay, beds aboard as respawn points and repair costs are agreed designs not yet built",
+      "The full test suite’s only failures during this work were terrain tests from other work in the same tree"
+    ],
+    "image": {
+      "src": "/assets/devblog/vehicles-workbench-tech-tree.jpg",
+      "alt": "Vehicle workbench tech tree with the Tin Finch, a minicopter, the TOGG car with tyres, engine and suspension parts, and a motorbike",
+      "caption": "The Vehicle Workbench’s tech tree: Tin Finch, KA-FA 1500, the TOGG and its parts, and the Zamazingo · hosted capture, 21 October.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/vehicles-togg-at-bay.jpg",
+        "alt": "A teal TOGG truck with a flat bed standing beside a vehicle workbench’s marked bay in a meadow",
+        "caption": "The TOGG at the bench’s marked bay · hosted capture, 21 October.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/vehicles-togg-chassis.jpg",
+        "alt": "Close view of the TOGG’s chassis, flat deck and suspension beside a hazard-striped corner post",
+        "caption": "The chassis, deck and suspension beside a bay corner post · hosted capture, 21 October.",
+        "kind": "capture",
+        "afterParagraph": 4
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-21-a-bay-you-drive-into-and-a-truck-that-sounds-like-one",
+    "date": "2026-10-21",
+    "order": 47,
+    "title": "A bay you drive into, and a TOGG that sounds like a truck",
+    "summary": "Tyres, a lift kit and engines can be changed at the vehicle workbench, and the TOGG gains an overboost, black smoke and a recorded diesel.",
+    "category": "Gameplay",
+    "verificationStatus": "Rules tested over the network and in a hosted tour; frame times and sound balance are not yet measured",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "The owner asked how to change a car’s engine or tyres, and until 21 October the answer was that you could not: the build was fixed when the car was crafted. Tyres and suspension are now modules too. A TOGG takes stock tyres, 1.7 m monster tyres or a lift kit that raises the body 0.75 m, with rules between them: monster tyres need the kit, and stock tyres exclude it. The Monster TOGG is no longer a separate vehicle but a TOGG with monster parts: 1,920 kg, 450 kW and a 122 km/h top speed on 1.7 m tyres.",
+      "The vehicle workbench’s painted bay is the lift. A stopped, empty vehicle standing in the bay can have its build changed: hold E, or open VEHICLE IN BAY from the tech tree, and the vehicle’s sockets appear as slots beside the inventory. Drag a module in to fit it and out to take it off. The server checks everything, from the player’s distance to whether everyone is out of the vehicle, and refuses in plain words, such as ‘Take off the monster tyres first’. Two owner reports shaped the rest. The screen kept asking for a vehicle to be driven into a bay the TOGG was standing in, because the client painted the bay in a different frame from the one the rules measured; the rules now read the bay where it is painted. And a vehicle driven near the bay should be drawn into it: below 4 m/s and within 1.5 m, it glides to the bay’s middle over half a second.",
+      "INSPECT VEHICLE, a hold-E verb on any module-built vehicle, opens the same screen read-only from anywhere, with every module’s condition as a bar and a percentage and the chassis health beside it.",
+      "The TOGG itself was pushed toward a heavy truck. Left Shift is an overboost: 40 per cent more power at double the fuel, with no time limit, a turbo that spools sooner, a column of black exhaust with billows thrown in the engine’s rhythm, an engine that rocks on its mounts and shakes the chassis, and air brakes that hiss as it comes to rest. Its diesel now plays from recorded truck loops between 600 and 2,400 rpm, with turbo flutter, gear clunks and a Jake brake, instead of a synthesised engine."
+    ],
+    "highlights": [
+      "Stock tyres, monster tyres, a 0.75 m lift kit and engines as swappable modules",
+      "The Monster TOGG is a TOGG with monster parts",
+      "Bay lift with server-checked rules and plain refusals; vehicles glide into the bay",
+      "INSPECT VEHICLE shows module and chassis condition from anywhere",
+      "Overboost, black smoke, a rocking engine and recorded diesel loops"
+    ],
+    "limitations": [
+      "A vehicle left in a bay without tyres falls after a server restart",
+      "Locking and naming at the bench, engine parts with quality tiers, and the bike’s modules are not built yet",
+      "A report that a vehicle cannot be used once its engine is removed has not been reproduced in tests",
+      "Frame times with the new smoke and sound are unmeasured: the hosted runs shared the PC with other tests",
+      "The truck sound is a first pass; mixing and levels are still being tuned",
+      "The pictures are hosted captures; the vehicle screen with the mannequin is the interface viewer on sample data"
+    ],
+    "image": {
+      "src": "/assets/devblog/vehicles-monster-togg.jpg",
+      "alt": "The Monster TOGG on large tyres standing in a meadow near the vehicle workbench’s bay",
+      "caption": "The Monster TOGG: a TOGG on 1.7 m tyres and a lift kit · hosted capture, 21 October.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/vehicles-bay-screen.jpg",
+        "alt": "Vehicle bay screen listing the TOGG’s sockets, mass 1,920 kg, power 450 kW and lifted 0.75 m",
+        "caption": "The vehicle screen beside the inventory: sockets as slots, mass, power, top speed and lift · hosted capture, 21 October.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/vehicles-monster-tyres-screen.jpg",
+        "alt": "Interface viewer showing the monster tyres item with its description and the vehicle bay with condition bars",
+        "caption": "Module condition bars and an item description · interface viewer on sample data.",
+        "kind": "capture",
+        "afterParagraph": 2
+      },
+      {
+        "src": "/assets/devblog/vehicles-inspect.jpg",
+        "alt": "Read-only vehicle screen opened away from the bay with a hint to drive into a vehicle workbench’s bay to change it",
+        "caption": "INSPECT VEHICLE away from the bay: read-only, with a hint · hosted capture, 21 October.",
+        "kind": "capture",
+        "afterParagraph": 3
+      }
+    ]
+  },
+  {
+    "slug": "2026-10-20-rebuilding-earths-terrain",
+    "date": "2026-10-20",
+    "order": 48,
+    "title": "Rebuilding Earth’s terrain, and what we threw away",
+    "summary": "The first cliff dressing was rejected. Earth is now baked and eroded once, and steep rock comes from a placed kit.",
+    "category": "Worldbuilding",
+    "verificationStatus": "Fast iterations for the owner to judge by eye; no terrain look is approved and the terrain tests are stale",
+    "published": "2026-10-21",
+    "paragraphs": [
+      "Terrain was the hardest argument of the week. The first dressing of Earth’s cliffs, scanned rock skins laid along whole faces, went through four generations on 19 October. The owner’s playtest on 20 October found six problems: collision tiles at cliffs reaching 436,000 triangles, 97 per cent of them copied cliff shells; cliffs that read as scattered assets; bare beaches; ground textures repeating in visible squares; white pans of very shallow sea filled with a 3.1 m foam texture; and a shoreline that never moved. The owner rejected the cliffs.",
+      "The replacement plan was approved the same day: the ground keeps to runnable slopes, each planet’s large shape is baked once with erosion and drainage, and steep rock becomes placed models from a cliff kit. Earth is now baked on a 7.4 m grid of 393,216 cells and worn by 100 steps: lakes fill to their spill, streams cut by stream power, steep slopes slide and soil creeps. The bake takes about 13.5 seconds, is cached and loads in 0.1 s. It produces 12 lakes (46.8 ha), and its highest ground is 220 m, lower than the designed peaks, because erosion wears them down.",
+      "The cliff kit is 21 rock pieces cut from the owner’s scans. A placement pass grows chains of pieces along slopes steeper than 32°, picks a family by place (Nordic near the sea, desert on tablelands, tundra elsewhere), faces each piece downhill and drops any that would stand in water or on a monument. On Earth that was 7,527 pieces in 695 of 6,144 cells, placed in 0.8 s, and the ground is stamped to meet each wall. Collision was cut too: a ground tile keeps only the cliff triangles lying over it, 75,000–100,000 at the six busiest sites instead of 282,000–436,000.",
+      "This is deliberately fast, hand-checked iteration. By the owner’s rule, no tests, captures or polish are produced until a look is approved, so several terrain tests currently fail in the working tree, among them the terrain’s golden hash and the cliff placement and formation tests. The cliff picture here is the rejected generation, shown as a record of what we moved away from. Rivers on the baked terrain come next."
+    ],
+    "highlights": [
+      "Earth baked once on a 7.4 m grid with 100 erosion steps; cached and loaded in 0.1 s",
+      "A 21-piece cliff kit cut from the owner’s scans, placed in 0.8 s",
+      "Cliff collision per tile cut from 282,000–436,000 triangles to 75,000–100,000",
+      "The rejected cliff generation retired rather than patched"
+    ],
+    "limitations": [
+      "No terrain look is approved yet; every iteration is for the owner to judge by hand",
+      "Tests for Earth’s cliffs, formations and save revision have not been updated: ten fail in the current tree",
+      "The cliffs pictured are the rejected 19 October generation",
+      "Slivers of steep bare ground remain between far pieces, where the coarse distant terrain cuts across the fitted ground"
+    ],
+    "image": {
+      "src": "/assets/devblog/earth-land-map.jpg",
+      "alt": "Equal-area map of Earth with two large landmasses, lakes and rivers on either side of an ocean",
+      "caption": "Earth’s map from the 16 October land-proportion work · development capture; the terrain has been re-baked since.",
+      "kind": "capture"
+    },
+    "media": [
+      {
+        "src": "/assets/devblog/t2-coastal-scarp.jpg",
+        "alt": "Layered rock formations on red ground above a meadow, from the rejected cliff generation",
+        "caption": "A coastal scarp from the rejected 19 October cliff generation · development capture, so the frame rate shown is not representative of play.",
+        "kind": "capture",
+        "afterParagraph": 1
+      }
+    ]
+  }
+]
