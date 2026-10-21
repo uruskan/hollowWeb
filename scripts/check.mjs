@@ -6,11 +6,12 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
 const posts=JSON.parse(await readFile(path.join(root,'content/posts.json'),'utf8'));
 const config=JSON.parse(await readFile(path.join(root,'site.config.json'),'utf8'));
+const staticSite=process.env.SITE_STATIC==='1'||config.waitlist===false;
 const errors=[];let links=0;
 async function walk(dir){const found=[];for(const item of await readdir(dir,{withFileTypes:true})){const full=path.join(dir,item.name);found.push(...item.isDirectory()?await walk(full):[full]);}return found;}
 const files=await walk(dist), html=files.filter(f=>f.endsWith('.html'));
 const publicPaths=new Set(files.map(f=>path.relative(dist,f).replaceAll('\\','/')));
-const expected=posts.length+new Set(posts.map(p=>p.date)).size+6+Math.ceil(posts.length/PAGE_SIZE)-1;
+const expected=posts.length+new Set(posts.map(p=>p.date)).size+(staticSite?5:6)+Math.ceil(posts.length/PAGE_SIZE)-1;
 for(const post of posts){
  if(!post.image)errors.push(`${post.slug}: missing lead image`);
  const media=[post.image,...(post.media||[])].filter(Boolean);

@@ -8,6 +8,20 @@ RustMVP was deleted on 21 October 2026. This site's source was restored from the
 `D:/GameDev/Backups/RustMVP-history-2026-10-21.bundle` (branch `wip/before-deletion-2026-10-21`, folder `website/`) into
 `D:/GameDev/Projects/biveno-website`, which is now its own git repository. The live site is unchanged until `npm run deploy`.
 
+## Hosting — 21 October 2026
+
+**biveno.com has lapsed** (the renewal was not paid; its nameservers now point at a parking service). The Cloudflare Worker
+`bare-devlog` still serves the full site, including the waitlist, at https://bare-devlog.auruskan.workers.dev (last deployed
+21 October 2026, version `fa1674a6-b0c6-441a-b2da-b3181b15c504`); its pages still name biveno.com as their canonical origin.
+The three waitlist signups live in that Worker's Durable Object.
+
+**GitHub Pages** is the home from now on. `.github/workflows/pages.yml` builds with `SITE_STATIC=1` (no waitlist links or
+page, since Pages has no API) and `SITE_ORIGIN=https://hollowisland.piramittek.com`, checks the output and deploys `dist/`.
+One-time setup after pushing to GitHub: Settings → Pages → Source: GitHub Actions; Custom domain: `hollowisland.piramittek.com`;
+and a DNS `CNAME` record for `hollowisland` on piramittek.com pointing at `<github-user>.github.io`. Root-relative links mean
+the site needs a domain (or user-site) root; a plain `user.github.io/repo/` address would break them. Local equivalent:
+`SITE_STATIC=1 SITE_ORIGIN=https://hollowisland.piramittek.com node scripts/build.mjs` and `... node scripts/check.mjs --publish`.
+
 ## Current project — 21 October 2026
 
 The journal has 51 entries. Eight were added for October 16 to 21 (admin tools, electricity and the crosshair, the meadow
