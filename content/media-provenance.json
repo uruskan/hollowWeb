@@ -287,6 +287,12 @@
       "type": "capture",
       "source": "HollowIsland/docs/images/ground/grass/clearing-hillside-low-sun.jpg",
       "sha256": "a6b1fbfeac32959f9a216cf87e31fdc93adf1d66936122b4ef0905ab32b511f9"
+    },
+    {
+      "asset": "steam-demos-evening.webp",
+      "type": "capture",
+      "source": "Owner’s Steam client screenshot, 21 October 2026",
+      "sha256": "a3c7801b3d748598f6ccd93b625825a67f9f27497dc47937aa2dd77e08386ea3"
     }
   ],
   "articleRecords": [
